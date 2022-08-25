@@ -4,7 +4,7 @@ export default [
     method: "get",
     response: () => {
       return {
-        tekst: "sokos-mikrofrontend-template !! Ser du denne teksten funker alt 😊 🎉",
+        tekst: "sokos-mikrofrontend-template !! Woohoo !! 😊 🎉",
       };
     },
   },
