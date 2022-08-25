@@ -1,7 +1,7 @@
 const express = require("express");
 const cors = require("cors");
 const path = require("path");
-const basePath = "/sokos-okonomiportalen-attestasjon";
+const basePath = "/sokos-mikrofrontend-template";
 const buildPath = path.resolve(__dirname, "../dist");
 const server = express();
 

@@ -1,29 +1,29 @@
 apiVersion: "nais.io/v1alpha1"
 kind: "Application"
 metadata:
-  name: sokos-okonomiportalen-attestasjon
+  name: sokos-mikrofrontend-template
   namespace: okonomi
   labels:
     team: okonomi
 spec:
   envFrom:
-    - secret: sokos-okonomiportalen-attestasjon-secrets
+    - secret: sokos-mikrofrontend-template-secrets
   image: {{ image }}
   port: 7100
   liveness:
-    path: /sokos-okonomiportalen-attestasjon/internal/isAlive
+    path: /sokos-mikrofrontend-template/internal/isAlive
     initialDelay: 10
   readiness:
-    path: /sokos-okonomiportalen-attestasjon/internal/isReady
+    path: /sokos-mikrofrontend-template/internal/isReady
     initialDelay: 10
   prometheus:
     enabled: true
-    path: /sokos-okonomiportalen-attestasjon/internal/metrics
+    path: /sokos-mikrofrontend-template/internal/metrics
   replicas:
     min: 2
     max: 4
   ingresses:
-    - "https://okonomiportal.dev.nav.no/sokos-okonomiportalen-attestasjon"
+    - "https://okonomiportal.dev.nav.no/sokos-mikrofrontend-template"
   resources:
     limits:
       cpu: "3"

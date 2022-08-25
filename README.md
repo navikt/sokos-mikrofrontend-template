@@ -16,7 +16,7 @@ Brukes som utgangspunkt for å opprette nye mikrofrontends i Økonomiportalen.
    ```
    ./setupTemplate.sh
    ```
-3.
+3. Slett `setupTemplate.sh` hvis du er ferdig med endre navn på prosjektet
 
 4. Sett riktig port i server/server.js, Dockerfile og nais.yaml.
 5. Sett riktig namespace og team i nais manifestene, de ligger i mappen under `nais/<cluster>`
