@@ -40,7 +40,7 @@ export default ({ command }: ConfigEnv): UserConfigExport => ({
   build: {
     lib: {
       entry: resolve(__dirname, "src/Mikrofrontend.tsx"),
-      name: "sokos-attestasjon-frontend",
+      name: "sokos-mikrofrontend-template",
       formats: ["es"],
       fileName: () => `bundle.js`,
     },

@@ -1,5 +1,5 @@
 {
-  "name": "sokos-attestasjon-frontend",
+  "name": "sokos-mikrofrontend-template",
   "version": "1.0.0",
   "scripts": {
     "dev": "vite",
