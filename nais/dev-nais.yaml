@@ -23,7 +23,7 @@ spec:
     min: 2
     max: 4
   ingresses:
-    - "https://okonomiportal.dev.nav.no/sokos-mikrofrontend-template"
+    - "https://sokos-mikrofrontend-template.dev.nav.no/sokos-mikrofrontend-template"
   resources:
     limits:
       cpu: "3"

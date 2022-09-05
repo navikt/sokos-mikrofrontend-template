@@ -6,6 +6,7 @@ import { ConfigEnv } from "vite";
 import cssInjectedByJsPlugin from "vite-plugin-css-injected-by-js";
 import { viteMockServe } from "vite-plugin-mock";
 import { UserConfigExport } from "vitest/config";
+import viteCompression from "vite-plugin-compression";
 
 const reactUrl = "https://www.dev.nav.no/tms-min-side-assets/react/17/esm/index.js";
 const reactDomUrl = "https://www.dev.nav.no/tms-min-side-assets/react-dom/17/esm/index.js";
@@ -20,6 +21,12 @@ export default ({ command }: ConfigEnv): UserConfigExport => ({
     react(),
     terser(),
     cssInjectedByJsPlugin(),
+    viteCompression({
+      algorithm: "gzip",
+    }),
+    viteCompression({
+      algorithm: "brotliCompress",
+    }),
     viteMockServe({
       mockPath: "mock",
       localEnabled: command === "serve",
@@ -33,7 +40,7 @@ export default ({ command }: ConfigEnv): UserConfigExport => ({
   build: {
     lib: {
       entry: resolve(__dirname, "src/Mikrofrontend.tsx"),
-      name: "sokos-okonomiportalen-attestasjon",
+      name: "sokos-attestasjon-frontend",
       formats: ["es"],
       fileName: () => `bundle.js`,
     },

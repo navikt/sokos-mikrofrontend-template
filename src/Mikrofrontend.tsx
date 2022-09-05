@@ -1,11 +1,11 @@
-import React from "react";
-import { QueryClient, QueryClientProvider, useQuery } from "react-query";
+import { QueryClientProvider } from "react-query";
+import queryClient from "./utils/query";
 import App from "./App";
 import "./App.css";
 
 const Mikrofrontend = () => {
   return (
-    <QueryClientProvider client={new QueryClient()}>
+    <QueryClientProvider client={queryClient}>
       <App />
     </QueryClientProvider>
   );
