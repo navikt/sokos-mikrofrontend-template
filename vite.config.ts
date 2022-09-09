@@ -3,13 +3,13 @@ import { resolve } from "path";
 import { rollupImportMapPlugin } from "rollup-plugin-import-map";
 import { terser } from "rollup-plugin-terser";
 import { ConfigEnv } from "vite";
+import viteCompression from "vite-plugin-compression";
 import cssInjectedByJsPlugin from "vite-plugin-css-injected-by-js";
 import { viteMockServe } from "vite-plugin-mock";
 import { UserConfigExport } from "vitest/config";
-import viteCompression from "vite-plugin-compression";
 
-const reactUrl = "https://www.dev.nav.no/tms-min-side-assets/react/17/esm/index.js";
-const reactDomUrl = "https://www.dev.nav.no/tms-min-side-assets/react-dom/17/esm/index.js";
+const reactUrl = "https://www.dev.nav.no/tms-min-side-assets/react/18/esm/index.js";
+const reactDomUrl = "https://www.dev.nav.no/tms-min-side-assets/react-dom/18/esm/index.js";
 
 const imports = {
   react: reactUrl,
