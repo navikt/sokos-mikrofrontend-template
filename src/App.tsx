@@ -1,18 +1,13 @@
 import "@navikt/ds-css";
-import { useQuery } from "react-query";
-import { fetcher } from "./api/api";
-import { apiUrl } from "./api/urls";
 import "./App.css";
-import Komponent from "./components/Komponent";
+import TestSide from "./pages/testside/TestSide.page";
 
-function App() {
-  const { data } = useQuery(apiUrl, fetcher);
-
+function App(): JSX.Element {
   return (
     <main className="main">
       <div className="app">
         <section className="page-wrapper-microfrontend">
-          <Komponent tekst={data?.tekst} />
+          <TestSide />
         </section>
       </div>
     </main>

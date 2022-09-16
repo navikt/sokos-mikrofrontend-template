@@ -3,12 +3,12 @@ import queryClient from "./utils/query";
 import App from "./App";
 import "./App.css";
 
-const Mikrofrontend = () => {
+function Mikrofrontend(): JSX.Element {
   return (
     <QueryClientProvider client={queryClient}>
       <App />
     </QueryClientProvider>
   );
-};
+}
 
 export default Mikrofrontend;

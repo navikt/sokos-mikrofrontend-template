@@ -1,9 +1,10 @@
 import React from "react";
-import ReactDOM from "react-dom";
-import "./index.css";
+import ReactDOM from "react-dom/client";
 import Mikrofrontend from "./Mikrofrontend";
+import "./main.css";
 
-ReactDOM.render(
+const root = ReactDOM.createRoot(document.getElementById("root") as HTMLElement);
+root.render(
   <React.StrictMode>
     <div className="page-wrapper">
       <div className="page-layout">
@@ -12,6 +13,5 @@ ReactDOM.render(
         </main>
       </div>
     </div>
-  </React.StrictMode>,
-  document.getElementById("root")
+  </React.StrictMode>
 );

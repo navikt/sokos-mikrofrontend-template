@@ -7,8 +7,3 @@
   flex-direction: column;
   display: flex;
 }
-
-svg {
-  width: 24px;
-  height: 24px;
-}
