@@ -1,17 +1,10 @@
-function getEnvironment(): "production" | "development" {
-  if (process.env.NODE_ENV === "production") {
-    return "production";
-  }
-  return "development";
-}
-
 type EnvUrl = { development: string; production: string };
 
-const API_URL: EnvUrl = {
-  development: "http://localhost:3000/api",
-  production: "https://sokos-xxx-xxx.dev.intern.nav.no/api",
+const ENVIRONMENT: EnvUrl = {
+  development: "http://localhost:3000",
+  production: "https://sokos-xxx-xxx.dev.intern.nav.no",
 };
 
-export const apiUrl = API_URL[getEnvironment()];
+const BASE_URL: string = import.meta.env.PROD ? ENVIRONMENT.production : ENVIRONMENT.development;
 
-export const minUrl = `${apiUrl}/endpoint`;
+export const MIN_URL = `${BASE_URL}/api/endpoint`;

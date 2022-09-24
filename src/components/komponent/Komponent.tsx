@@ -1,15 +1,15 @@
 import "./Komponent.css";
 
-interface Props {
+type Props = {
   tekst: string;
-}
+};
 
-function Komponent({ tekst }: Props): JSX.Element {
+const Komponent: React.FC<Props> = ({ tekst }) => {
   return (
     <div className="komponent">
       <p>{tekst}</p>
     </div>
   );
-}
+};
 
 export default Komponent;

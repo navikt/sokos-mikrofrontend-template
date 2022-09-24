@@ -1,8 +1,7 @@
-import "@navikt/ds-css";
 import "./App.css";
 import TestSide from "./pages/testside/TestSide.page";
 
-function App(): JSX.Element {
+const App = () => {
   return (
     <main className="main">
       <div className="app">
@@ -12,6 +11,6 @@ function App(): JSX.Element {
       </div>
     </main>
   );
-}
+};
 
 export default App;
