@@ -45,14 +45,4 @@ export default ({ command }: ConfigEnv): UserConfigExport => ({
       fileName: () => `bundle.js`,
     },
   },
-  test: {
-    globals: true,
-    environment: "jsdom",
-    deps: {
-      inline: ["@testing-library/user-event"],
-    },
-    coverage: {
-      provider: "c8",
-    },
-  },
 });
