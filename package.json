@@ -42,7 +42,7 @@
     "vite": "2.9.9",
     "vite-plugin-compression": "^0.5.1",
     "vite-plugin-mock": "2.9.6",
-    "vitest": "0.23.2"
+    "vitest": "0.27.2"
   },
   "prettier": {
     "printWidth": 120
