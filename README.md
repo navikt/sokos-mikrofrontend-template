@@ -11,6 +11,7 @@ Brukes som utgangspunkt for å opprette nye mikrofrontends i Økonomiportalen.
 - precommit linting med a11y og react
 
 ## Tilpass repo-et
+
 1. Kjør `chmod 755 setupTemplate.sh`
 2. Kjør:
    ```
@@ -25,9 +26,10 @@ Brukes som utgangspunkt for å opprette nye mikrofrontends i Økonomiportalen.
 
 # Kom i gang
 
-1. Bygg sokos-mikrofrontend-template ved å kjøre `npm run build`
-2. Start appen lokalt ved å kjøre `npm run dev`
-3. Appen nås på http://localhost:3000
+1. Installere dependencies `npm intall`
+2. Bygg sokos-mikrofrontend-template `npm run build`
+3. Start appen lokalt `npm run dev`
+4. Appen nås på http://localhost:3000
 
 # Henvendelser
 
