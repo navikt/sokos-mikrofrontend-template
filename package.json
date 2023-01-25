@@ -5,27 +5,26 @@
     "dev": "vite",
     "build": "tsc && vite build",
     "preview": "vite preview",
-    "coverage": "vitest run --coverage",
+    "test": "vitest",
     "prepare": "husky install",
     "lint": "eslint --fix --ext .ts,.tsx,.js,.jsx .",
     "pretty-quick": "pretty-quick --pattern \"**/*.*(ts|tsx)\""
   },
   "dependencies": {
-    "lint-staged": "^13.0.3",
+    "amplitude-js": "^8.21.3",
     "react": "18.2.0",
     "react-dom": "18.2.0",
     "react-query": "3.39.2",
-    "rollup-plugin-terser": "7.0.2",
-    "vite-plugin-css-injected-by-js": "2.1.0"
+    "rollup-plugin-terser": "7.0.2"
   },
   "devDependencies": {
+    "@types/amplitude-js": "^8.16.2",
     "@types/react": "18.0.19",
     "@types/react-dom": "18.0.6",
     "@types/react-modal": "3.13.1",
     "@typescript-eslint/eslint-plugin": "^5.37.0",
     "@typescript-eslint/parser": "^5.37.0",
     "@vitejs/plugin-react": "1.0.7",
-    "@vitest/coverage-c8": "^0.23.2",
     "autoprefixer": "^10.4.11",
     "eslint": "^8.23.1",
     "eslint-config-prettier": "^8.5.0",
@@ -33,6 +32,7 @@
     "eslint-plugin-react": "^7.31.8",
     "husky": "^8.0.1",
     "jsdom": "20.0.0",
+    "lint-staged": "^13.0.3",
     "postcss": "^8.4.16",
     "prettier": "^2.7.1",
     "pretty-quick": "3.1.3",
@@ -41,14 +41,16 @@
     "typescript": "4.8.3",
     "vite": "2.9.9",
     "vite-plugin-compression": "^0.5.1",
+    "vite-plugin-css-injected-by-js": "2.1.0",
     "vite-plugin-mock": "2.9.6",
-    "vitest": "0.23.2"
+    "vitest": "0.13.1"
   },
   "prettier": {
     "printWidth": 120
   },
   "lint-staged": {
     "*.{js,jsx,ts,tsx}": [
+      "eslint -c .eslintrc.pre-commit.js --fix",
       "prettier --cache --write"
     ],
     "*.{css,md,html,json}": [

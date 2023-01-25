@@ -42,7 +42,7 @@ export default ({ command }: ConfigEnv): UserConfigExport => ({
       entry: resolve(__dirname, "src/Mikrofrontend.tsx"),
       name: "sokos-mikrofrontend-template",
       formats: ["es"],
-      fileName: () => `bundle.js`,
+      fileName: () => `sokos-mikrofrontend-template.js`,
     },
   },
 });

@@ -5,6 +5,9 @@ metadata:
   namespace: okonomi
   labels:
     team: okonomi
+  annotations:
+    config.linkerd.io/proxy-memory-limit: "512Mi"
+    config.linkerd.io/proxy-memory-request: "128Mi"
 spec:
 #  env:
 #  - name: CORS_ALLOWED_ORIGIN
@@ -28,7 +31,7 @@ spec:
   resources:
     limits:
       cpu: "3"
-      memory: 768Mi
+      memory: 1268Mi
     requests:
       cpu: "500m"
-      memory: 512Mi
+      memory: 1024Mi
