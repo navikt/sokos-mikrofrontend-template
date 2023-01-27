@@ -53,7 +53,7 @@
   },
   "lint-staged": {
     "*.{js,jsx,ts,tsx}": [
-      "eslint -c .eslintrc.pre-commit.js --fix",
+      "eslint -c .eslintrc.pre-commit.cjs --fix",
       "prettier --cache --write"
     ],
     "*.{css,md,html,json}": [
