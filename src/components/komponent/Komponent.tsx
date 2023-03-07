@@ -6,7 +6,7 @@ type Props = {
 
 const Komponent: React.FC<Props> = ({ tekst }) => {
   return (
-    <div className="komponent">
+    <div className="bg-green-300 border-green-600 border-b p-4 m-4 rounded flex justify-center">
       <p>{tekst}</p>
     </div>
   );
