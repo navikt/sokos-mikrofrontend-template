@@ -1,17 +1,17 @@
-import amplitude from "amplitude-js";
+import { init, track } from "@amplitude/analytics-browser";
 
 export const initializeAmplitude = () => {
-  amplitude.getInstance().init("default", "", {
-    apiEndpoint: "amplitude.nav.no/collect-auto",
-    saveEvents: false,
-    includeUtm: true,
-    includeReferrer: true,
-    platform: window.location.toString(),
+  init("default", undefined, {
+    useBatch: true,
+    serverUrl: "https://amplitude.nav.no/collect-auto",
+    ingestionMetadata: {
+      sourceName: window.location.toString(),
+    },
   });
 };
 
-export function logAmplitudeEvent(komponent: string) {
-  amplitude.getInstance().logEvent("navigere", {
+export const logAmplitudeEvent = (komponent: string) => {
+  track("navigere", {
     komponent,
   });
-}
+};
