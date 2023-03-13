@@ -1,4 +1,4 @@
-import { Loader, Table } from "@navikt/ds-react";
+import { BodyLong, Heading, Loader, Panel, Table } from "@navikt/ds-react";
 import useSWR from "swr";
 import { fetcher } from "../../api/api";
 import { MIN_URL } from "../../api/urls";
@@ -14,6 +14,12 @@ const ResultatSide = () => {
 
   return (
     <div>
+      <Panel border className="mt-6 text-center">
+        <Heading spacing level="2" size="large">
+          sokos-mikrofrontend-template
+        </Heading>
+        <BodyLong>Dette er et template for å bygge undersider i Økonomiportalen</BodyLong>
+      </Panel>
       <Table>
         <Table.Header>
           <Table.Row>
