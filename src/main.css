@@ -1,8 +1,8 @@
+@import "tailwindcss/base";
 @import "../node_modules/@navikt/ds-css";
 @import "../node_modules/@navikt/ds-css-internal";
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import "tailwindcss/components";
+@import "tailwindcss/utilities";
 
 html,
 body {
