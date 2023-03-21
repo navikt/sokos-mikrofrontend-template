@@ -6,9 +6,9 @@ metadata:
   labels:
     team: okonomi
 spec:
-#  env:
-#  - name: CORS_ALLOWED_ORIGIN
-#    value: "https://www.hoved-container-som-setter-sammen-alle-mikrofrontend.dev.intern.nav.no/"
+  env:
+  - name: CORS_ALLOWED_ORIGIN
+    value: "https://www.okonomiportalen.dev.intern.nav.no/"
   image: {{ image }}
   port: 7100
   liveness:
@@ -24,7 +24,7 @@ spec:
     min: 1
     max: 2
   ingresses:
-    - "https://sokos-mikrofrontend-template.dev.nav.no/sokos-mikrofrontend-template"
+    - "https://okonomiportalen.dev.intern.nav.no/mikrofrontend"
   resources:
     limits:
       cpu: "3"
