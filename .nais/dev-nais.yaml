@@ -12,14 +12,14 @@ spec:
   image: {{ image }}
   port: 7100
   liveness:
-    path: /sokos-mikrofrontend-template/internal/isAlive
+    path: /mikrofrontend/internal/isAlive
     initialDelay: 10
   readiness:
-    path: /sokos-mikrofrontend-template/internal/isReady
+    path: /mikrofrontend/internal/isReady
     initialDelay: 10
   prometheus:
     enabled: true
-    path: /sokos-mikrofrontend-template/internal/metrics
+    path: /mikrofrontend/internal/metrics
   replicas:
     min: 1
     max: 2
