@@ -13,16 +13,16 @@
     "pretty-quick": "pretty-quick --pattern \"**/*.*(ts|tsx)\""
   },
   "dependencies": {
+    "@amplitude/analytics-browser": "1.9.1",
     "@navikt/ds-css": "^2.8.1",
     "@navikt/ds-css-internal": "^2.8.1",
     "@navikt/ds-react": "^2.8.1",
     "@navikt/ds-react-internal": "^2.8.1",
     "@navikt/ds-tokens": "^2.8.1",
-    "@amplitude/analytics-browser": "1.9.1",
+    "@rollup/plugin-terser": "^0.4.0",
     "react": "18.2.0",
     "react-dom": "18.2.0",
-    "swr": "2.1.0",
-    "rollup-plugin-terser": "7.0.2"
+    "swr": "2.1.0"
   },
   "devDependencies": {
     "@types/amplitude-js": "^8.16.2",
