@@ -23,15 +23,17 @@ const ResultatSide = () => {
       <Table>
         <Table.Header>
           <Table.Row>
+            <Table.HeaderCell scope="col">Id</Table.HeaderCell>
             <Table.HeaderCell scope="col">Navn</Table.HeaderCell>
-            <Table.HeaderCell scope="col">Fødseslnr.</Table.HeaderCell>
+            <Table.HeaderCell scope="col">Yrke</Table.HeaderCell>
           </Table.Row>
         </Table.Header>
         <Table.Body>
           {data?.map(({ id, navn, yrke }, i) => {
             return (
               <Table.Row key={i + id}>
-                <Table.HeaderCell scope="row">{navn}</Table.HeaderCell>
+                <Table.HeaderCell scope="row">{id}</Table.HeaderCell>
+                <Table.DataCell>{navn}</Table.DataCell>
                 <Table.DataCell>{yrke}</Table.DataCell>
               </Table.Row>
             );
