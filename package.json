@@ -14,7 +14,7 @@
   },
   "dependencies": {
     "@amplitude/analytics-browser": "1.9.1",
-    "@navikt/ds-css": "^2.8.3",
+    "@navikt/ds-css": "^2.8.10",
     "@navikt/ds-css-internal": "^2.8.3",
     "@navikt/ds-react": "^2.8.3",
     "@navikt/ds-react-internal": "^2.8.3",
