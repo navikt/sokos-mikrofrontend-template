@@ -26,7 +26,7 @@
   },
   "devDependencies": {
     "@types/amplitude-js": "^8.16.2",
-    "@types/react": "18.0.28",
+    "@types/react": "18.0.32",
     "@types/react-dom": "18.0.11",
     "@types/react-modal": "3.13.1",
     "@typescript-eslint/eslint-plugin": "^5.56.0",
