@@ -11,7 +11,7 @@ metadata:
 spec:
   env:
   - name: CORS_ALLOWED_ORIGIN
-    value: "https://www.okonomiportalen.intern.nav.no/"
+    value: "https://okonomiportalen.intern.dev.nav.no"
   image: {{ image }}
   port: 7100
   liveness:
