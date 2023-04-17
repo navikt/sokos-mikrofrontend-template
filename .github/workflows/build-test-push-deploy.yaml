@@ -11,7 +11,7 @@ on:
       - '.gitignore'
       - '.github/workflows/build-pr.yaml'
       - '.github/workflows/security.yaml'
-      - '.github/workflows/alerts-dev.yaml'
+      - '.github/workflows/alerts.yaml'
       - '.nais/alerts-dev.yaml'
 
 jobs:

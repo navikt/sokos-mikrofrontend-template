@@ -10,6 +10,7 @@ on:
       - 'CODEOWNERS'
       - '.gitignore'
       - '.github/workflows/build-pr.yaml'
+      - '.github/workflows/build-test-push-deploy.yaml'
       - '.github/workflows/security.yaml'
 
 jobs:
