@@ -7,4 +7,4 @@ const ENVIRONMENT: EnvUrl = {
 
 const BASE_URL: string = import.meta.env.PROD ? ENVIRONMENT.production : ENVIRONMENT.development;
 
-export const EMPLOYEE_URL = `${BASE_URL}/api/endpoint`;
+export const EMPLOYEE_URL = `${BASE_URL}/api/employee`;

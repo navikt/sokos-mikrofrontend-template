@@ -1,6 +1,6 @@
 export default [
   {
-    url: "/api/endpoint",
+    url: "/api/employee",
     method: "get",
     response: () => {
       return [
