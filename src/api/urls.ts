@@ -2,7 +2,7 @@ type EnvUrl = { development: string; production: string };
 
 const ENVIRONMENT: EnvUrl = {
   development: "http://localhost:5173",
-  production: "https://sokos-oppdrag-proxy.dev.intern.nav.no",
+  production: "https://sokos-oppdrag-proxy.intern.dev.nav.no",
 };
 
 const BASE_URL: string = import.meta.env.PROD ? ENVIRONMENT.production : ENVIRONMENT.development;
