@@ -1,12 +1,12 @@
 import { BodyLong, Heading, Loader, Panel, Table } from "@navikt/ds-react";
 import useSWR from "swr";
 import { fetcher } from "../../api/api";
-import { MIN_URL } from "../../api/urls";
-import { Employee } from "../../models/Employee";
 import "./Employee.css";
+import { Employee } from "../../models/Employee";
+import { EMPLOYEE_URL } from "../../api/urls";
 
 const ResultatSide = () => {
-  const { data, isLoading } = useSWR<Employee[]>(MIN_URL, fetcher);
+  const { data, isLoading } = useSWR<Employee[]>(EMPLOYEE_URL, fetcher);
 
   if (isLoading) {
     return <Loader size="3xlarge" title="Henter data..." />;
