@@ -10,7 +10,7 @@ spec:
   - name: CORS_ALLOWED_ORIGIN
     value: "https://okonomiportalen.intern.dev.nav.no"
   - name: SERVER_PORT
-    value: 7100
+    value: "7100"
   image: {{ image }}
   port: 7100
   liveness:
