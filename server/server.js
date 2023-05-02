@@ -6,7 +6,7 @@ const buildPath = path.resolve(__dirname, "../dist");
 const server = express();
 const corsAllowedOrigin = process.env.CORS_ALLOWED_ORIGIN || "http://localhost:5173";
 
-const PORT = process.env.SERVER_PORT || 7500;
+const PORT = process.env.SERVER_PORT || 7100;
 
 server.use(cors({ origin: corsAllowedOrigin }));
 
