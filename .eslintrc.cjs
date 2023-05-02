@@ -11,6 +11,7 @@ module.exports = {
     "**/dist/*.js",
     "vite.config.ts",
     "/server/server.js",
+    "src/setupProxy.js",
     "plugin:react/recommended",
   ],
   plugins: ["@typescript-eslint", "jsx-a11y", "react"],
