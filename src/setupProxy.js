@@ -16,5 +16,5 @@ module.exports = (app) => {
     );
   };
 
-  setupProxy("/sokos-mikrofrontend-template/mikrofrontendApi", "http://localhost:9100");
+  setupProxy("/sokos-mikrofrontend-template/mikrofrontendApi", "http://localhost:9500");
 };
