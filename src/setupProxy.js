@@ -1,8 +1,8 @@
 const { createProxyMiddleware } = require("http-proxy-middleware");
 
-module.exports = (app) => {
+module.exports = (server) => {
   const setupProxy = (fraPath, tilTarget) => {
-    app.use(
+    server.use(
       fraPath,
       createProxyMiddleware({
         target: tilTarget,
