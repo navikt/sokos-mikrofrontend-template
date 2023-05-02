@@ -6,8 +6,6 @@ const buildPath = path.resolve(__dirname, "../dist");
 const server = express();
 const corsAllowedOrigin = process.env.CORS_ALLOWED_ORIGIN || "http://localhost:5173";
 
-const PORT = process.env.SERVER_PORT || 7100;
-
 server.use(cors({ origin: corsAllowedOrigin }));
 
 const expressStaticGzip = require("express-static-gzip");
@@ -22,4 +20,4 @@ server.use(
 
 server.get([`${basePath}/internal/isAlive`, `${basePath}/internal/isReady`], (_req, res) => res.sendStatus(200));
 
-server.listen(PORT, () => console.log(`Server listening on port ${PORT}`));
+server.listen(8080, () => console.log("Server listening on port 8080"));
