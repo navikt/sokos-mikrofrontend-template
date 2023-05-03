@@ -8,12 +8,16 @@ const ResultatSide = () => {
   const { data, isLoading } = useSWR<Employee[]>(employeeApiUrl, fetcher);
 
   if (isLoading) {
-    return <Loader size="3xlarge" title="Henter data..." />;
+    return (
+      <div className="mt-6 text-center">
+        <Loader size="3xlarge" title="Henter data..." />
+      </div>
+    );
   }
 
   return (
     <>
-      <Panel border>
+      <Panel border className="mt-6 text-center">
         <Heading spacing level="2" size="large">
           sokos-mikrofrontend-template
         </Heading>

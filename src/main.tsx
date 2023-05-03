@@ -6,8 +6,6 @@ import Mikrofrontend from "./Mikrofrontend";
 const root = ReactDOM.createRoot(document.getElementById("root") as HTMLElement);
 root.render(
   <React.StrictMode>
-    <main>
-      <Mikrofrontend />
-    </main>
+    <Mikrofrontend />
   </React.StrictMode>
 );
