@@ -1,11 +1,8 @@
-import EmployeePage from "./pages/Employee.page";
-import classes from "./Mikrofrontend.module.css";
+import App from "./App";
+import "./App.module.css";
+
 const Mikrofrontend = () => {
-  return (
-    <div className={classes.page_wrapper_microfrontend}>
-      <EmployeePage />
-    </div>
-  );
+  return <App />;
 };
 
 export default Mikrofrontend;

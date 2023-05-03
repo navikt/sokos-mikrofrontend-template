@@ -9,15 +9,15 @@ const ResultatSide = () => {
 
   if (isLoading) {
     return (
-      <div className="mt-6 text-center">
+      <div className="flex justify-center m-10">
         <Loader size="3xlarge" title="Henter data..." />
       </div>
     );
   }
 
   return (
-    <>
-      <Panel border className="mt-6 text-center">
+    <div className="m-8">
+      <Panel border className="text-center">
         <Heading spacing level="2" size="large">
           sokos-mikrofrontend-template
         </Heading>
@@ -43,7 +43,7 @@ const ResultatSide = () => {
           })}
         </Table.Body>
       </Table>
-    </>
+    </div>
   );
 };
 
