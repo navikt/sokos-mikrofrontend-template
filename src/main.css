@@ -3,28 +3,3 @@
 @import "../node_modules/@navikt/ds-css-internal";
 @import "tailwindcss/components";
 @import "tailwindcss/utilities";
-
-html,
-body {
-  height: 100%;
-}
-
-body {
-  background-color: #f1f1f1;
-}
-
-.page-wrapper {
-  height: auto;
-  min-height: 100%;
-}
-
-.page-layout {
-  display: flex;
-  align-items: center;
-  flex-direction: column;
-}
-
-main {
-  width: 100%;
-  max-width: 808px;
-}

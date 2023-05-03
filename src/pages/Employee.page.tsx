@@ -1,19 +1,22 @@
 import { BodyLong, Heading, Loader, Panel, Table } from "@navikt/ds-react";
 import useSWR from "swr";
-import { fetcher } from "../../api/api";
-import "./Employee.css";
-import { Employee } from "../../models/Employee";
-import { employeeApiUrl } from "../../api/urls";
+import { fetcher } from "../api/api";
+import { Employee } from "../models/Employee";
+import { employeeApiUrl } from "../api/urls";
 
 const ResultatSide = () => {
   const { data, isLoading } = useSWR<Employee[]>(employeeApiUrl, fetcher);
 
   if (isLoading) {
-    return <Loader size="3xlarge" title="Henter data..." />;
+    return (
+      <div className="mt-6 text-center">
+        <Loader size="3xlarge" title="Henter data..." />
+      </div>
+    );
   }
 
   return (
-    <div>
+    <>
       <Panel border className="mt-6 text-center">
         <Heading spacing level="2" size="large">
           sokos-mikrofrontend-template
@@ -40,7 +43,7 @@ const ResultatSide = () => {
           })}
         </Table.Body>
       </Table>
-    </div>
+    </>
   );
 };
 
