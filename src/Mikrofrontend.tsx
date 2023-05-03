@@ -1,7 +1,8 @@
-import EmployeePage from "./pages/Employee.page";
+import App from "./App";
+import "./App.css";
 
 const Mikrofrontend = () => {
-  return <EmployeePage />;
+  return <App />;
 };
 
 export default Mikrofrontend;
