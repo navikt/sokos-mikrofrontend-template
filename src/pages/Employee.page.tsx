@@ -3,6 +3,7 @@ import useSWR from "swr";
 import { fetcher } from "../api/api";
 import { Employee } from "../models/Employee";
 import { employeeApiUrl } from "../api/urls";
+import style from "./Employee.module.css";
 
 const ResultatSide = () => {
   const { data, isLoading } = useSWR<Employee[]>(employeeApiUrl, fetcher);
@@ -16,7 +17,7 @@ const ResultatSide = () => {
   }
 
   return (
-    <div className="m-8">
+    <div className="mx-5 mt-5">
       <Panel border className="text-center">
         <Heading spacing level="2" size="large">
           sokos-mikrofrontend-template
