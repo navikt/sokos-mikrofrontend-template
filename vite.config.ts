@@ -49,4 +49,9 @@ export default ({ command }: ConfigEnv): UserConfigExport => ({
       fileName: () => `bundle.js`,
     },
   },
+  css: {
+    modules: {
+      generateScopedName: "[name]__[local]___[hash:base64:5]",
+    },
+  },
 });
