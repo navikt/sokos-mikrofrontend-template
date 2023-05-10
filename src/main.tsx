@@ -1,8 +1,7 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
 import "./index.css";
-import "./App.module.css";
-import Mikrofrontend from "./Mikrofrontend";
+import App from "./App";
 
 const root = ReactDOM.createRoot(document.getElementById("root") as HTMLElement);
 root.render(
@@ -10,7 +9,7 @@ root.render(
     <div className="page-wrapper">
       <div className="page-layout">
         <main>
-          <Mikrofrontend />
+          <App />
         </main>
       </div>
     </div>
