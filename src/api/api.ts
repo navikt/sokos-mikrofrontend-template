@@ -3,6 +3,15 @@ type Props = {
   options?: object;
 };
 
+class FetchError extends Error {
+  response: Response;
+
+  constructor(response: Response, message: string) {
+    super(message);
+    this.response = response;
+  }
+}
+
 export const includeCredentials = {
   credentials: "include",
 };
@@ -14,7 +23,7 @@ export const fetcher = async ({ path, options }: Props) => {
   });
 
   if (!response.ok) {
-    throw new Error("Fetch request failed");
+    throw new FetchError(response, "Fetch request failed");
   }
 
   return await response.json();
