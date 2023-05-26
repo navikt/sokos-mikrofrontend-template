@@ -12,7 +12,7 @@
     "lint": "eslint --fix --ext .ts,.tsx ."
   },
   "dependencies": {
-    "@navikt/ds-css": "^3.2.3",
+    "@navikt/ds-css": "^3.3.1",
     "@navikt/ds-css-internal": "^3.2.3",
     "@navikt/ds-react": "^3.2.3",
     "@navikt/ds-react-internal": "^3.2.3",
