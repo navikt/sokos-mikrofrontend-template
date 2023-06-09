@@ -11,8 +11,6 @@ on:
       - '.gitignore'
       - '.github/workflows/build-pr.yaml'
       - '.github/workflows/security.yaml'
-      - '.github/workflows/alerts.yaml'
-      - '.nais/alerts-dev.yaml'
 
 jobs:
   bygg-test-push-image:
