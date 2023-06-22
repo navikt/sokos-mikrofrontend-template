@@ -47,7 +47,11 @@
   "eslintConfig": {
     "extends": [
       "plugin:jsx-a11y/recommended",
-      "plugin:@typescript-eslint/recommended",
+      "plugin:@typescript-eslint/recommended"
+    ]
+  },
+  "stylelint": {
+    "extends": [
       "@navikt/aksel-stylelint/recommended"
     ]
   },
