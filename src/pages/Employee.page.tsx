@@ -1,4 +1,4 @@
-import { Alert, BodyLong, Heading, Loader, Panel, Table } from "@navikt/ds-react";
+import { BodyLong, Heading, Loader, Panel, Table } from "@navikt/ds-react";
 import useSWRImmutable from "swr/immutable";
 import { fetcher, includeCredentials } from "../api/api";
 import { employeeApiUrl } from "../api/urls";
@@ -20,7 +20,6 @@ const ResultatSide = () => {
 
   return (
     <>
-      <Alert variant="info">Hello World</Alert>
       <Panel border className="text-center">
         <Heading spacing level="2" size="large">
           sokos-mikrofrontend-template
