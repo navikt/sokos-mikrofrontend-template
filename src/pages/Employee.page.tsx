@@ -1,8 +1,8 @@
-import { BodyLong, Heading, Loader, Panel, Table } from "@navikt/ds-react";
-import { fetcher, includeCredentials } from "../api/api";
-import { Employee } from "../models/Employee";
-import { employeeApiUrl } from "../api/urls";
+import { Alert, BodyLong, Heading, Loader, Panel, Table } from "@navikt/ds-react";
 import useSWRImmutable from "swr/immutable";
+import { fetcher, includeCredentials } from "../api/api";
+import { employeeApiUrl } from "../api/urls";
+import { Employee } from "../models/Employee";
 
 const ResultatSide = () => {
   const { data, isLoading } = useSWRImmutable<Employee[]>(
@@ -20,6 +20,7 @@ const ResultatSide = () => {
 
   return (
     <>
+      <Alert variant="info">Hello World</Alert>
       <Panel border className="text-center">
         <Heading spacing level="2" size="large">
           sokos-mikrofrontend-template
