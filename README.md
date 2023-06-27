@@ -2,7 +2,7 @@
 
 Brukes som utgangspunkt for å opprette nye mikrofrontends i Økonomiportalen.
 
-NB! Navngi følgende: `sokos-op-appName` eg: `sokos-op-skattekort`
+NB! Navngi følgende: `sokos-op-appNavn` eg: `sokos-op-skattekort`
 
 ## Tilpass repo-et
 
@@ -11,10 +11,11 @@ NB! Navngi følgende: `sokos-op-appName` eg: `sokos-op-skattekort`
    ```
    ./setupTemplate.sh
    ```
-3. Slett `setupTemplate.sh` hvis du er ferdig med endre navn på prosjektet
+3. Kun spesifiser navnet på applikasjonen som skal stå etter sokos-op-`appNavn`. Hvis du ønsker `sokos-op-skattekort` så skriv inn bare `skattekort`.
+4. Slett `setupTemplate.sh` hvis du er ferdig med endre navn på prosjektet
 
-4. Sett riktig namespace og team i nais manifestene, de ligger i mappen under `nais/<cluster>`
-5. Velg riktig ingress til appen i nais.yaml. Ingressen bør være `https://okonomiportalen.intern.dev.nav.no/appNavn`
+5. Sett riktig namespace og team i nais manifestene, de ligger i mappen under `nais/<cluster>`
+6. Velg riktig ingress til appen i nais.yaml. Ingressen bør være `https://okonomiportalen.intern.dev.nav.no/appNavn`
 
 # Kom i gang
 
