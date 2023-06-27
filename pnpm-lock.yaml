@@ -6,8 +6,8 @@ settings:
 
 dependencies:
   '@navikt/aksel-icons':
-    specifier: ^4.4.0
-    version: 4.4.0
+    specifier: ^4.4.1
+    version: 4.4.1
   '@navikt/ds-react':
     specifier: ^4.4.0
     version: 4.4.0(@types/react@18.2.14)(react-dom@18.2.0)(react@18.2.0)
@@ -734,8 +734,8 @@ packages:
       '@jridgewell/sourcemap-codec': 1.4.14
     dev: true
 
-  /@navikt/aksel-icons@4.4.0:
-    resolution: {integrity: sha512-0ocpEXeg8doTfVBnjqqxvuMcBrAzUKMKBUewlJ1hyma53VLWVBfDQZqlr/9QvvWyN5wx8Go4jrwVye3AViXirg==}
+  /@navikt/aksel-icons@4.4.1:
+    resolution: {integrity: sha512-62HZh0MUmDpf/XHIBVzSQyWCWEuv4hmzubQPNumADBdGAe3HXKN+CuT3USVJFX2XtVrsv/akALMBUWi+DvxaVA==}
     dev: false
 
   /@navikt/aksel-stylelint@4.4.0:
@@ -752,7 +752,7 @@ packages:
         optional: true
     dependencies:
       '@floating-ui/react': 0.24.1(react-dom@18.2.0)(react@18.2.0)
-      '@navikt/aksel-icons': 4.4.0
+      '@navikt/aksel-icons': 4.4.1
       '@radix-ui/react-tabs': 1.0.0(react-dom@18.2.0)(react@18.2.0)
       '@radix-ui/react-toggle-group': 1.0.0(react-dom@18.2.0)(react@18.2.0)
       '@types/react': 18.2.14
