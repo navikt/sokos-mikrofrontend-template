@@ -9,8 +9,6 @@ on:
     - cron: '0 6 * * *'
 env:
   LATEST_IMAGE: ${{ github.event.repository.name }}:latest
-  CI: true
-  TZ: Europe/Oslo
 
 jobs:
   vulnerability-analyze:

@@ -12,7 +12,6 @@ on:
       - '.github/workflows/build-pr.yaml'
       - '.github/workflows/security.yaml'
 env:
-  CI: true
   TZ: Europe/Oslo
 
 jobs:
