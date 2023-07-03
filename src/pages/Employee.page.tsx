@@ -1,12 +1,12 @@
 import { BodyLong, Heading, Loader, Panel, Table } from "@navikt/ds-react";
 import useSWRImmutable from "swr/immutable";
-import { fetcher, includeCredentials } from "../api/api";
+import { fetcher } from "../api/api";
 import { employeeApiUrl } from "../api/urls";
 import { Employee } from "../models/Employee";
 
 const ResultatSide = () => {
   const { data, isLoading } = useSWRImmutable<Employee[]>(
-    { path: employeeApiUrl, options: { method: "GET", includeCredentials } },
+    { path: employeeApiUrl, options: { method: "GET" } },
     fetcher
   );
 
