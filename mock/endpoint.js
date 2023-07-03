@@ -1,7 +1,7 @@
 export default [
   {
     url: "/mikrofrontend-api/api/employee",
-    method: "get",
+    method: "GET",
     response: () => {
       return [
         {

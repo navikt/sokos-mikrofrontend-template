@@ -6,7 +6,7 @@ import { Employee } from "../models/Employee";
 
 const ResultatSide = () => {
   const { data, isLoading } = useSWRImmutable<Employee[]>(
-    { path: employeeApiUrl, options: includeCredentials },
+    { path: employeeApiUrl, options: { method: "GET", includeCredentials } },
     fetcher
   );
 
