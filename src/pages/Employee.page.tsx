@@ -3,6 +3,7 @@ import useSWRImmutable from "swr/immutable";
 import { fetcher } from "../api/api";
 import { employeeApiUrl } from "../api/urls";
 import { Employee } from "../models/Employee";
+import styles from "./Employee.module.css";
 
 const ResultatSide = () => {
   const { data, isLoading } = useSWRImmutable<Employee[]>(
@@ -12,7 +13,7 @@ const ResultatSide = () => {
 
   if (isLoading) {
     return (
-      <div className="flex justify-center m-10">
+      <div className={styles.loader}>
         <Loader size="3xlarge" title="Henter data..." />
       </div>
     );
@@ -20,7 +21,7 @@ const ResultatSide = () => {
 
   return (
     <>
-      <Panel border className="text-center">
+      <Panel border className={styles.panel}>
         <Heading spacing level="2" size="large">
           sokos-mikrofrontend-template
         </Heading>
