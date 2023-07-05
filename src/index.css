@@ -15,6 +15,7 @@ body {
 .page-wrapper {
   height: auto;
   min-height: 100%;
+  margin: 5px;
 }
 
 .page-layout {
