@@ -1,11 +1,16 @@
-name: Build/test PR
+name: Manual deploy to dev
 
 on:
-  pull_request:
+  workflow_dispatch:
+env:
+  TZ: Europe/Oslo
 
 jobs:
-  build-pr:
-    name: Build and test
+  build:
+    permissions:
+      contents: "read"
+      id-token: "write"
+    name: Build/test & push image
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
@@ -41,3 +46,30 @@ jobs:
 
       - name: Build app
         run: pnpm run build
+
+      - name: Build docker image
+        uses: docker/setup-buildx-action@v2
+
+      - name: Push docker image to Google Artifact Registry
+        uses: nais/docker-build-push@v0
+        id: docker-build-push
+        with:
+          team: okonomi
+          identity_provider: ${{ secrets.NAIS_WORKLOAD_IDENTITY_PROVIDER }}
+          project_id: ${{ vars.NAIS_MANAGEMENT_PROJECT_ID }}
+          tag: dev
+    outputs:
+      image: ${{ steps.docker-build-push.outputs.image }}
+
+  deploy-dev:
+    name: Manual deploy to dev
+    needs: build
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: nais/deploy/actions/deploy@v1
+        env:
+          APIKEY: ${{ secrets.NAIS_DEPLOY_APIKEY }}
+          CLUSTER: dev-gcp
+          IMAGE: ${{ needs.build.outputs.image }}
+          RESOURCE: .nais/naiserator-dev.yaml

@@ -1,12 +1,13 @@
-name: Sikkerhet
+name: Security
 
 on:
   workflow_run:
-    workflows: ["Bygg, test og deploy til dev/prod"]
+    workflows: ["Deploy"]
     types:
       - completed
   schedule:
     - cron: '0 6 * * *'
+
 env:
   LATEST_IMAGE: ${{ github.event.repository.name }}:latest
 
@@ -16,7 +17,7 @@ jobs:
       contents: read
       id-token: write
       security-events: write
-    name: Sikkerhet analyse
+    name: Security analyze
     if: github.event.workflow_run.conclusion == 'success' || github.event_name == 'schedule'
     runs-on: ubuntu-latest
     strategy:
@@ -24,23 +25,18 @@ jobs:
       matrix:
         language: [ 'javascript' ]
     steps:
-      - name: Sjekker ut repo
-        uses: actions/checkout@v3
-
-      - name: Initialiserer CodeQL
-        uses: github/codeql-action/init@v2
+      - uses: actions/checkout@v3
+      - uses: github/codeql-action/init@v2
         with:
           languages: ${{ matrix.language }}
-
-      - name: Autobuild
-        uses: github/codeql-action/autobuild@v2
+      - uses: github/codeql-action/autobuild@v2
 
       - name: Perform CodeQL Analysis
         uses: github/codeql-action/analyze@v2
         with:
           category: "/language:${{matrix.language}}"
 
-      - name: Logger inn på Google Artifact Registry
+      - name: Login to Google Artifact Registry
         uses: nais/login@v0
         id: login
         with:
