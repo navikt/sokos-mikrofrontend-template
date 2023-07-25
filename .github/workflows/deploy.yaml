@@ -85,6 +85,7 @@ jobs:
           CLUSTER: dev-gcp
           IMAGE: ${{ needs.build.outputs.image }}
           RESOURCE: .nais/naiserator-dev.yaml
+          PRINT_PAYLOAD: true
 
   #  deploy-prod:
   #    name: Deploy til prod
@@ -99,3 +100,5 @@ jobs:
   #          CLUSTER: prod-gcp
   #          IMAGE: ${{ needs.build.outputs.image }}
   #          RESOURCE: .nais/naiserator-prod.yaml
+  #          PRINT_PAYLOAD: true
+
