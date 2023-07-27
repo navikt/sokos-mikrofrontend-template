@@ -22,7 +22,7 @@ jobs:
     permissions:
       contents: "read"
       id-token: "write"
-    name: Bygg/test & push image
+    name: Build/test & push image
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
@@ -74,7 +74,7 @@ jobs:
       image: ${{ steps.docker-build-push.outputs.image }}
 
   deploy-dev:
-    name: Deploy til dev
+    name: Deploy to dev
     needs: build
     runs-on: ubuntu-latest
     steps:
@@ -88,7 +88,7 @@ jobs:
           PRINT_PAYLOAD: true
 
   #  deploy-prod:
-  #    name: Deploy til prod
+  #    name: Deploy to prod
   #    needs: deploy-dev
   #    if: github.ref == 'refs/heads/master'
   #    runs-on: ubuntu-latest
