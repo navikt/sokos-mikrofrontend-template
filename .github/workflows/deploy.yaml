@@ -25,6 +25,8 @@ jobs:
     name: Build/test & push image
     runs-on: ubuntu-latest
     steps:
+      - id: set-repository-name
+        run: echo "REPOSITORY_NAME=$(echo $GITHUB_REPOSITORY | rev | cut -f1 -d"/" | rev )" >> $GITHUB_ENV
       - uses: actions/checkout@v3
       - uses: actions/setup-node@v3
         with:
@@ -58,6 +60,13 @@ jobs:
 
       - name: Build app
         run: pnpm run build
+
+      - name: CDN upload
+        uses: navikt/frontend/actions/cdn-upload/v1@main
+        with:
+          cdn-team-name: okonomi
+          source: ./dist
+          destination: ${{ env.REPOSITORY_NAME }}
 
       - name: Build docker image
         uses: docker/setup-buildx-action@v2

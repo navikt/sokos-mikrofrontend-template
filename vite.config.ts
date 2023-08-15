@@ -39,11 +39,16 @@ export default ({ command }: ConfigEnv): UserConfigExport => ({
     terser(),
   ],
   build: {
-    lib: {
-      entry: resolve(__dirname, "src/App.tsx"),
-      name: "sokos-mikrofrontend-template",
-      formats: ["es"],
-      fileName: () => `bundle.js`,
+    manifest: true,
+    rollupOptions: {
+      input: {
+        "sokos-mikrofrontend-template": resolve(__dirname, "src/App.tsx"),
+      },
+      preserveEntrySignatures: "exports-only",
+      output: {
+        entryFileNames: "[name].[hash].js",
+        format: "esm",
+      },
     },
   },
   css: {
