@@ -20,7 +20,6 @@ const getTelemetryCollectorURL = (): TelemetryCollectorURL => {
 
 export function initGrafanaFaro() {
   initializeFaro({
-    isolate: true,
     url: getTelemetryCollectorURL(),
     app: {
       name: "sokos-mikrofrontend-template",
