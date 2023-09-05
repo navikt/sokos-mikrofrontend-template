@@ -1,15 +1,9 @@
 import { BodyLong, Heading, Loader, Panel, Table } from "@navikt/ds-react";
-import useSWRImmutable from "swr/immutable";
-import { fetcher } from "../api/api";
-import { employeeApiUrl } from "../api/urls";
-import { Employee } from "../models/Employee";
 import styles from "./Employee.module.css";
+import RestService from "../services/rest-service";
 
 const ResultatSide = () => {
-  const { data, isLoading } = useSWRImmutable<Employee[]>(
-    { path: employeeApiUrl, options: { method: "GET" } },
-    fetcher
-  );
+  const { data, isLoading } = RestService.useFetchEmployees();
 
   if (isLoading) {
     return (

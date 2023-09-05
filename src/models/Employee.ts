@@ -3,3 +3,7 @@ export type Employee = {
   navn: string;
   yrke: string;
 };
+
+export type Employees = {
+  employees: Employee[];
+};
