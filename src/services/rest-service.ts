@@ -37,7 +37,7 @@ api.interceptors.response.use(
 );
 
 const useFetchEmployees = () => {
-  const { data, isLoading } = useSWR<Employee[]>("/employee", swrConfig);
+  const { data, isLoading } = useSWR<Employee[]>("/employeee", swrConfig);
   return { data, isLoading };
 };
 
