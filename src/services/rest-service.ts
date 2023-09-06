@@ -25,7 +25,8 @@ const swrConfig = {
 api.interceptors.response.use(
   (response) => response,
   (error) => {
-    if (error.response?.status === 400 || error.response?.status === 404) {
+    if (error.response?.status === 400) {
+      // her kan vi legge feilkoder også som vi fra backend
       throw new HttpStatusCodeError(error.response?.status);
     }
     if (error.response?.status === 401 || error.response?.status === 403) {
@@ -37,7 +38,7 @@ api.interceptors.response.use(
 );
 
 const useFetchEmployees = () => {
-  const { data, isLoading } = useSWR<Employee[]>("/employeee", swrConfig);
+  const { data, isLoading } = useSWR<Employee[]>("/employee", swrConfig);
   return { data, isLoading };
 };
 
