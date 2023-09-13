@@ -5,6 +5,8 @@ import RestService from "../services/rest-service";
 const ResultatSide = () => {
   const { data, isLoading } = RestService.useFetchEmployees();
 
+  console.log("data::::: ", data);
+
   if (isLoading) {
     return (
       <div className={styles.loader}>
