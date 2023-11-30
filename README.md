@@ -1,6 +1,6 @@
 # sokos-mikrofrontend-template
 
-Brukes som utgangspunkt for å opprette nye mikrofrontends i Økonomiportalen.
+Brukes som utgangspunkt for å opprette nye mikrofrontends i Økonomiportalen [sokos-op-fasade](https://github.com/navikt/sokos-op-fasade).
 
 NB! Navngi følgende: `sokos-op-appNavn` eg: `sokos-op-skattekort`
 
