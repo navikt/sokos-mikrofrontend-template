@@ -19,7 +19,7 @@ const ResultatSide = () => {
         <Heading spacing level="2" size="large">
           sokos-mikrofrontend-template
         </Heading>
-        <BodyLong>Dette er en template for å bygge undersider i Økonomiportalen</BodyLong>
+        <BodyLong>Dette er en template for å bygge undersider i Utbetalingsportalen</BodyLong>
       </Panel>
       <Table>
         <Table.Header>
