@@ -6,8 +6,8 @@ settings:
 
 dependencies:
   '@grafana/faro-web-sdk':
-    specifier: ^1.3.4
-    version: 1.3.4
+    specifier: ^1.3.5
+    version: 1.3.5
   '@navikt/aksel-icons':
     specifier: ^5.12.0
     version: 5.12.0
@@ -695,18 +695,18 @@ packages:
     resolution: {integrity: sha512-OfX7E2oUDYxtBvsuS4e/jSn4Q9Qb6DzgeYtsAdkPZ47znpoNsMgZw0+tVijiv3uGNR6dgNlty6r9rzIzHjtd/A==}
     dev: false
 
-  /@grafana/faro-core@1.3.4:
-    resolution: {integrity: sha512-r3l+7+qZHWGlAcc1q0DQI5xdF2cidDoYO0TtU3P1XDFLayFqMcUwQpXX1Yu0fd/WYegrtgc96jwje7g9W2N/5g==}
+  /@grafana/faro-core@1.3.5:
+    resolution: {integrity: sha512-5DBJDVqzTRh6cHq2usmX1eisyQiJ60gX3TEnRIKMQ3a+uwEDJN5q/Cm4wz3PVk1WH8HimzOPMty3FoFN/zxH9g==}
     dependencies:
       '@opentelemetry/api': 1.7.0
       '@opentelemetry/otlp-transformer': 0.45.1(@opentelemetry/api@1.7.0)
       murmurhash-js: 1.0.0
     dev: false
 
-  /@grafana/faro-web-sdk@1.3.4:
-    resolution: {integrity: sha512-jPgSqU+W6RZKWmo1XOBJEv/Rn8O6AeHeKeD9N8G8Rs0Rg3jW0HfnU+dA07trpdbHVpdF1jJ84XNe9hhJRbbThg==}
+  /@grafana/faro-web-sdk@1.3.5:
+    resolution: {integrity: sha512-yIHLUnunmVvZr4dTMmk6Z2KpfF3HFmDI0YFWQFoQOP6vItHi/kXj9jFV92f0FuEjSaGwq46P9EJclpksL1tZAQ==}
     dependencies:
-      '@grafana/faro-core': 1.3.4
+      '@grafana/faro-core': 1.3.5
       ua-parser-js: 1.0.35
       web-vitals: 3.4.0
     dev: false
