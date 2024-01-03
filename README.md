@@ -11,7 +11,7 @@ NB! Navngi følgende: `sokos-up-appNavn` eg: `sokos-up-skattekort`
    ```
    ./setupTemplate.sh
    ```
-3. Kun spesifiser navnet på applikasjonen som skal stå etter sokos-op-`appNavn`. Hvis du ønsker `sokos-up-skattekort` så skriv inn bare `skattekort`.
+3. Kun spesifiser navnet på applikasjonen som skal stå etter sokos-up-`appNavn`. Hvis du ønsker `sokos-up-skattekort` så skriv inn bare `skattekort`.
 4. Slett `setupTemplate.sh` hvis du er ferdig med endre navn på prosjektet
 
 5. Sett riktig namespace og team i nais manifestene, de ligger i mappen under `nais/<cluster>`
