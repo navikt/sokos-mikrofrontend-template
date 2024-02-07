@@ -1,6 +1,6 @@
 # sokos-mikrofrontend-template
 
-Brukes som utgangspunkt for å opprette nye mikrofrontends i Utbetalingsportalen [sokos-up-container](https://github.com/navikt/sokos-up-container).
+Brukes som utgangspunkt for å opprette nye mikrofrontends i Utbetalingsportalen [sokos-utbetalingsportalen](https://github.com/navikt/sokos-utbetalingsportalen).
 
 NB! Navngi følgende: `sokos-up-appNavn` eg: `sokos-up-skattekort`
 
