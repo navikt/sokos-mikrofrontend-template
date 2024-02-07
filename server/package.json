@@ -14,7 +14,7 @@
     "express-static-gzip": "^2.1.7"
   },
   "engines": {
-    "node": ">=18.15.0",
+    "node": ">=20.11.0",
     "pnpm": ">=8"
   }
 }
