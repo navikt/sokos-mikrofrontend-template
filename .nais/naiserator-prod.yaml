@@ -12,7 +12,7 @@ spec:
   env:
   - name: CORS_ALLOWED_ORIGIN
     value: "https://utbetalingsportalen.intern.dev.nav.no"
-  image: {{ image }}
+  image: "{{ image }}"
   port: 8080
   liveness:
     path: /sokos-mikrofrontend-template/internal/isAlive
@@ -27,7 +27,7 @@ spec:
     min: 2
     max: 4
   ingresses:
-    - "https://utbetalingsportalen.intern.dev.nav.no/sokos-mikrofrontend-template"
+    - "https://utbetalingsportalen.intern.nav.no/sokos-mikrofrontend-template"
   resources:
     limits:
       cpu: "3"
