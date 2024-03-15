@@ -1,7 +1,6 @@
-import { BodyLong, Button, Heading, Loader, Panel, Table } from "@navikt/ds-react";
+import { BodyLong, GuidePanel, Heading, Loader, Table } from "@navikt/ds-react";
 import styles from "./Employee.module.css";
 import RestService from "../services/rest-service";
-import { Link } from "react-router-dom";
 
 const ResultatSide = () => {
   const { data, isLoading } = RestService.useFetchEmployees();
@@ -16,14 +15,13 @@ const ResultatSide = () => {
 
   return (
     <>
-      <Panel border className={styles.panel}>
-        <Heading spacing level="2" size="large">
+      <GuidePanel poster>
+        <Heading style={{color:"white", backgroundColor: "purple"}} spacing level="2" size="large">
           sokos-mikrofrontend-template
         </Heading>
-        <BodyLong>Dette er en template for å bygge undersider i Utbetalingsportalen</BodyLong>
-      </Panel>
-      <Link to={"/foo"} >En helt annen side</Link>
-      <Table>
+        <BodyLong style={{color:"white", backgroundColor: "green"}}>Dette er en annen side</BodyLong>
+      </GuidePanel>
+      <Table zebraStripes>
         <Table.Header>
           <Table.Row>
             <Table.HeaderCell scope="col">Id</Table.HeaderCell>
