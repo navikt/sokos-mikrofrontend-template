@@ -1,7 +1,7 @@
 import { useEffect } from "react";
 import { initGrafanaFaro } from "./util/grafanaFaro";
 import "./App.module.css";
-import { Route, BrowserRouter, Routes, Navigator, Location } from "react-router-dom";
+import { Route, BrowserRouter, Routes } from "react-router-dom";
 import EmployeePage from "./pages/Employee.page";
 import FooPage from "./pages/Foo.page";
 
