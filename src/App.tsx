@@ -10,7 +10,7 @@ const App = () => {
     initGrafanaFaro();
   }, []);
 
-  return <BrowserRouter>
+  return <BrowserRouter basename="/mikrofrontend">
     <Routes>
       <Route path="/" element={<EmployeePage />} />
       <Route path="/foo" element={<FooPage />} />

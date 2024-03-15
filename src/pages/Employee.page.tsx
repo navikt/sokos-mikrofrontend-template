@@ -1,4 +1,4 @@
-import { BodyLong, Button, Heading, Loader, Panel, Table } from "@navikt/ds-react";
+import { BodyLong, Heading, Loader, Panel, Table } from "@navikt/ds-react";
 import styles from "./Employee.module.css";
 import RestService from "../services/rest-service";
 import { Link } from "react-router-dom";
