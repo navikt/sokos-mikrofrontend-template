@@ -13,9 +13,9 @@
   },
   "dependencies": {
     "@grafana/faro-web-sdk": "^1.5.1",
-    "@navikt/aksel-icons": "^6.3.6",
-    "@navikt/ds-css": "^6.3.6",
-    "@navikt/ds-react": "^6.3.6",
+    "@navikt/aksel-icons": "^6.5.0",
+    "@navikt/ds-css": "^6.5.0",
+    "@navikt/ds-react": "^6.5.0",
     "axios": "^1.6.8",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
@@ -23,11 +23,11 @@
   },
   "devDependencies": {
     "@eik/rollup-plugin": "^4.0.63",
-    "@navikt/aksel-stylelint": "^6.3.6",
+    "@navikt/aksel-stylelint": "^6.5.0",
     "@rollup/plugin-terser": "^0.4.4",
-    "@types/react": "^18.2.74",
-    "@types/react-dom": "^18.2.24",
-    "@typescript-eslint/eslint-plugin": "^7.5.0",
+    "@types/react": "^18.2.78",
+    "@types/react-dom": "^18.2.25",
+    "@typescript-eslint/eslint-plugin": "^7.6.0",
     "@vitejs/plugin-react": "^4.2.1",
     "autoprefixer": "^10.4.19",
     "eslint": "^9.0.0",
@@ -45,7 +45,7 @@
     "vite-plugin-css-injected-by-js": "^3.5.0",
     "vite-plugin-environment": "^1.1.3",
     "vite-plugin-mock": "^3.0.1",
-    "vitest": "^1.4.0"
+    "vitest": "^1.5.0"
   },
   "eslintConfig": {
     "extends": [
