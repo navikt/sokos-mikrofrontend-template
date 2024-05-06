@@ -21,7 +21,7 @@ NB! Navngi følgende: `sokos-up-appNavn` eg: `sokos-up-navn` (Dette er viktig s�
 
 1. Installere [Node.js](https://nodejs.dev/en/)
 2. Installer [pnpm](https://pnpm.io/)
-3. Installere dependencies `pnpm intall`
+3. Installere dependencies `pnpm install`
 4. Start appen lokalt `pnpm run dev`
 5. Bruker du ikke routing? Appen nås på http://localhost:5173
 6. Bruker du routing? Appen nås på http://localhost:5173/mikrofrontend
@@ -34,7 +34,7 @@ Templaten har ikke routing. Men om du ønsker å ha routing gjør du følgende:
 2. Erstatter følgende innhold i [App.tsx](/src/App.tsx)
 
 ```
-return <EmployeePage />;
+return <TemplatePage />;
 ```
 
 med
@@ -42,7 +42,7 @@ med
 ```
 return <BrowserRouter basename="/mikrofrontend">
     <Routes>
-      <Route path="/" element={<EmployeePage />} />
+      <Route path="/" element={<TemplatePage />} />
       <Route path="/anotherpage" element={<AnotherPage />} />
     </Routes>
   </BrowserRouter>
