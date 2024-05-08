@@ -79,9 +79,15 @@ devDependencies:
   prettier:
     specifier: ^3.2.5
     version: 3.2.5
+  prettier-plugin-tailwindcss:
+    specifier: ^0.5.14
+    version: 0.5.14(@trivago/prettier-plugin-sort-imports@4.3.0)(prettier@3.2.5)
   stylelint:
-    specifier: ^16.3.1
-    version: 16.3.1(typescript@5.4.5)
+    specifier: ^16.5.0
+    version: 16.5.0(typescript@5.4.5)
+  stylelint-config-standard:
+    specifier: ^25.0.0
+    version: 25.0.0(stylelint@16.5.0)
   tailwindcss:
     specifier: ^3.4.3
     version: 3.4.3
@@ -479,38 +485,38 @@ packages:
       to-fast-properties: 2.0.0
     dev: true
 
-  /@csstools/css-parser-algorithms@2.6.1(@csstools/css-tokenizer@2.2.4):
+  /@csstools/css-parser-algorithms@2.6.3(@csstools/css-tokenizer@2.3.1):
     resolution:
       {
-        integrity: sha512-ubEkAaTfVZa+WwGhs5jbo5Xfqpeaybr/RvWzvFxRs4jfq16wH8l8Ty/QEEpINxll4xhuGfdMbipRyz5QZh9+FA==,
+        integrity: sha512-xI/tL2zxzEbESvnSxwFgwvy5HS00oCXxL4MLs6HUiDcYfwowsoQaABKxUElp1ARITrINzBnsECOc1q0eg2GOrA==,
       }
     engines: { node: ^14 || ^16 || >=18 }
     peerDependencies:
-      "@csstools/css-tokenizer": ^2.2.4
+      "@csstools/css-tokenizer": ^2.3.1
     dependencies:
-      "@csstools/css-tokenizer": 2.2.4
+      "@csstools/css-tokenizer": 2.3.1
     dev: true
 
-  /@csstools/css-tokenizer@2.2.4:
+  /@csstools/css-tokenizer@2.3.1:
     resolution:
       {
-        integrity: sha512-PuWRAewQLbDhGeTvFuq2oClaSCKPIBmHyIobCV39JHRYN0byDcUWJl5baPeNUcqrjtdMNqFooE0FGl31I3JOqw==,
+        integrity: sha512-iMNHTyxLbBlWIfGtabT157LH9DUx9X8+Y3oymFEuMj8HNc+rpE3dPFGFgHjpKfjeFDjLjYIAIhXPGvS2lKxL9g==,
       }
     engines: { node: ^14 || ^16 || >=18 }
     dev: true
 
-  /@csstools/media-query-list-parser@2.1.9(@csstools/css-parser-algorithms@2.6.1)(@csstools/css-tokenizer@2.2.4):
+  /@csstools/media-query-list-parser@2.1.11(@csstools/css-parser-algorithms@2.6.3)(@csstools/css-tokenizer@2.3.1):
     resolution:
       {
-        integrity: sha512-qqGuFfbn4rUmyOB0u8CVISIp5FfJ5GAR3mBrZ9/TKndHakdnm6pY0L/fbLcpPnrzwCyyTEZl1nUcXAYHEWneTA==,
+        integrity: sha512-uox5MVhvNHqitPP+SynrB1o8oPxPMt2JLgp5ghJOWf54WGQ5OKu47efne49r1SWqs3wRP8xSWjnO9MBKxhB1dA==,
       }
     engines: { node: ^14 || ^16 || >=18 }
     peerDependencies:
-      "@csstools/css-parser-algorithms": ^2.6.1
-      "@csstools/css-tokenizer": ^2.2.4
+      "@csstools/css-parser-algorithms": ^2.6.3
+      "@csstools/css-tokenizer": ^2.3.1
     dependencies:
-      "@csstools/css-parser-algorithms": 2.6.1(@csstools/css-tokenizer@2.2.4)
-      "@csstools/css-tokenizer": 2.2.4
+      "@csstools/css-parser-algorithms": 2.6.3(@csstools/css-tokenizer@2.3.1)
+      "@csstools/css-tokenizer": 2.3.1
     dev: true
 
   /@csstools/selector-specificity@3.0.3(postcss-selector-parser@6.0.16):
@@ -2482,10 +2488,10 @@ packages:
       which: 2.0.2
     dev: true
 
-  /css-functions-list@3.2.1:
+  /css-functions-list@3.2.2:
     resolution:
       {
-        integrity: sha512-Nj5YcaGgBtuUmn1D7oHqPW0c9iui7xsTsj5lIX8ZgevdfhmjFfKB3r8moHJtNJnctnYXJyYX5I1pp90HM4TPgQ==,
+        integrity: sha512-c+N0v6wbKVxTu5gOBBFkr9BEdBWaqqjQeiJ8QvSRIJOf+UxlJh930m8e6/WNeODIK0mYLFkoONrnj16i2EcvfQ==,
       }
     engines: { node: ">=12 || >=16" }
     dev: true
@@ -4526,6 +4532,65 @@ packages:
     engines: { node: ">= 0.8.0" }
     dev: true
 
+  /prettier-plugin-tailwindcss@0.5.14(@trivago/prettier-plugin-sort-imports@4.3.0)(prettier@3.2.5):
+    resolution:
+      {
+        integrity: sha512-Puaz+wPUAhFp8Lo9HuciYKM2Y2XExESjeT+9NQoVFXZsPPnc9VYss2SpxdQ6vbatmt8/4+SN0oe0I1cPDABg9Q==,
+      }
+    engines: { node: ">=14.21.3" }
+    peerDependencies:
+      "@ianvs/prettier-plugin-sort-imports": "*"
+      "@prettier/plugin-pug": "*"
+      "@shopify/prettier-plugin-liquid": "*"
+      "@trivago/prettier-plugin-sort-imports": "*"
+      "@zackad/prettier-plugin-twig-melody": "*"
+      prettier: ^3.0
+      prettier-plugin-astro: "*"
+      prettier-plugin-css-order: "*"
+      prettier-plugin-import-sort: "*"
+      prettier-plugin-jsdoc: "*"
+      prettier-plugin-marko: "*"
+      prettier-plugin-organize-attributes: "*"
+      prettier-plugin-organize-imports: "*"
+      prettier-plugin-sort-imports: "*"
+      prettier-plugin-style-order: "*"
+      prettier-plugin-svelte: "*"
+    peerDependenciesMeta:
+      "@ianvs/prettier-plugin-sort-imports":
+        optional: true
+      "@prettier/plugin-pug":
+        optional: true
+      "@shopify/prettier-plugin-liquid":
+        optional: true
+      "@trivago/prettier-plugin-sort-imports":
+        optional: true
+      "@zackad/prettier-plugin-twig-melody":
+        optional: true
+      prettier-plugin-astro:
+        optional: true
+      prettier-plugin-css-order:
+        optional: true
+      prettier-plugin-import-sort:
+        optional: true
+      prettier-plugin-jsdoc:
+        optional: true
+      prettier-plugin-marko:
+        optional: true
+      prettier-plugin-organize-attributes:
+        optional: true
+      prettier-plugin-organize-imports:
+        optional: true
+      prettier-plugin-sort-imports:
+        optional: true
+      prettier-plugin-style-order:
+        optional: true
+      prettier-plugin-svelte:
+        optional: true
+    dependencies:
+      "@trivago/prettier-plugin-sort-imports": 4.3.0(prettier@3.2.5)
+      prettier: 3.2.5
+    dev: true
+
   /prettier@3.2.5:
     resolution:
       {
@@ -5077,23 +5142,46 @@ packages:
       js-tokens: 9.0.0
     dev: true
 
-  /stylelint@16.3.1(typescript@5.4.5):
+  /stylelint-config-recommended@7.0.0(stylelint@16.5.0):
     resolution:
       {
-        integrity: sha512-/JOwQnBvxEKOT2RtNgGpBVXnCSMBgKOL2k7w0K52htwCyJls4+cHvc4YZgXlVoAZS9QJd2DgYAiRnja96pTgxw==,
+        integrity: sha512-yGn84Bf/q41J4luis1AZ95gj0EQwRX8lWmGmBwkwBNSkpGSpl66XcPTulxGa/Z91aPoNGuIGBmFkcM1MejMo9Q==,
+      }
+    peerDependencies:
+      stylelint: ^14.4.0
+    dependencies:
+      stylelint: 16.5.0(typescript@5.4.5)
+    dev: true
+
+  /stylelint-config-standard@25.0.0(stylelint@16.5.0):
+    resolution:
+      {
+        integrity: sha512-21HnP3VSpaT1wFjFvv9VjvOGDtAviv47uTp3uFmzcN+3Lt+RYRv6oAplLaV51Kf792JSxJ6svCJh/G18E9VnCA==,
+      }
+    peerDependencies:
+      stylelint: ^14.4.0
+    dependencies:
+      stylelint: 16.5.0(typescript@5.4.5)
+      stylelint-config-recommended: 7.0.0(stylelint@16.5.0)
+    dev: true
+
+  /stylelint@16.5.0(typescript@5.4.5):
+    resolution:
+      {
+        integrity: sha512-IlCBtVrG+qTy3v+tZTk50W8BIomjY/RUuzdrDqdnlCYwVuzXtPbiGfxYqtyYAyOMcb+195zRsuHn6tgfPmFfbw==,
       }
     engines: { node: ">=18.12.0" }
     hasBin: true
     dependencies:
-      "@csstools/css-parser-algorithms": 2.6.1(@csstools/css-tokenizer@2.2.4)
-      "@csstools/css-tokenizer": 2.2.4
-      "@csstools/media-query-list-parser": 2.1.9(@csstools/css-parser-algorithms@2.6.1)(@csstools/css-tokenizer@2.2.4)
+      "@csstools/css-parser-algorithms": 2.6.3(@csstools/css-tokenizer@2.3.1)
+      "@csstools/css-tokenizer": 2.3.1
+      "@csstools/media-query-list-parser": 2.1.11(@csstools/css-parser-algorithms@2.6.3)(@csstools/css-tokenizer@2.3.1)
       "@csstools/selector-specificity": 3.0.3(postcss-selector-parser@6.0.16)
       "@dual-bundle/import-meta-resolve": 4.0.0
       balanced-match: 2.0.0
       colord: 2.9.3
       cosmiconfig: 9.0.0(typescript@5.4.5)
-      css-functions-list: 3.2.1
+      css-functions-list: 3.2.2
       css-tree: 2.3.1
       debug: 4.3.4
       fast-glob: 3.3.2
