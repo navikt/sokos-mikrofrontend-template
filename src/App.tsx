@@ -1,9 +1,9 @@
 import { useEffect } from "react";
-import { initGrafanaFaro } from "./util/grafanaFaro";
 import "./App.module.css";
 import TemplatePage from "./pages/TemplatePage";
+import { initGrafanaFaro } from "./util/grafanaFaro";
 
-const App = ({ gjelderId }: { gjelderId?: string }) => {
+const App = () => {
   useEffect(() => {
     initGrafanaFaro();
   }, []);
