@@ -1,14 +1,14 @@
 import { useEffect } from "react";
 import { initGrafanaFaro } from "./util/grafanaFaro";
 import "./App.module.css";
-import EmployeePage from "./pages/Employee.page";
+import TemplatePage from "./pages/TemplatePage";
 
 const App = ({ gjelderId }: { gjelderId?: string }) => {
   useEffect(() => {
     initGrafanaFaro();
   }, []);
 
-  return <EmployeePage />;
+  return <TemplatePage />;
 };
 
 export default App;
