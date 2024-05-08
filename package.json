@@ -8,6 +8,7 @@
     "build": "vite build",
     "preview": "vite preview",
     "test": "vitest",
+    "prepare": "husky",
     "lint": "eslint --fix --ext .ts,.tsx .",
     "lint:css": "yarn stylelint '@navikt/**/*.css'"
   },
