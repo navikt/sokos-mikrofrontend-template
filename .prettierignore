@@ -1,0 +1,9 @@
+# Ignore artifacts:
+dist
+mock
+server/build
+**/node_modules
+**/github*.yml
+**/github*.yaml
+**/nais*.yaml
+**/nais*.yml

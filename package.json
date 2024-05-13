@@ -8,8 +8,8 @@
     "build": "vite build",
     "preview": "vite preview",
     "test": "vitest",
-    "prepare": "husky install",
-    "lint": "eslint --fix --ext .ts,.tsx ."
+    "prepare": "husky",
+    "lint": "eslint"
   },
   "dependencies": {
     "@grafana/faro-web-sdk": "^1.7.2",
@@ -23,48 +23,80 @@
   },
   "devDependencies": {
     "@eik/rollup-plugin": "^4.0.63",
+    "@eslint/js": "^9.2.0",
     "@navikt/aksel-stylelint": "^6.7.0",
     "@rollup/plugin-terser": "^0.4.4",
+    "@trivago/prettier-plugin-sort-imports": "^4.3.0",
+    "@types/node": "^20.12.11",
     "@types/react": "^18.3.1",
     "@types/react-dom": "^18.3.0",
-    "@typescript-eslint/eslint-plugin": "^7.8.0",
     "@vitejs/plugin-react": "^4.2.1",
     "autoprefixer": "^10.4.19",
     "eslint": "^9.2.0",
     "eslint-config-prettier": "^9.1.0",
-    "eslint-plugin-jsx-a11y": "^6.8.0",
-    "eslint-plugin-react": "^7.34.1",
+    "globals": "^15.2.0",
     "husky": "^9.0.11",
     "jsdom": "^24.0.0",
     "lint-staged": "^15.2.2",
     "postcss": "^8.4.38",
     "prettier": "^3.2.5",
+    "prettier-plugin-tailwindcss": "^0.5.14",
     "stylelint": "^16.5.0",
+    "stylelint-config-standard": "^36.0.0",
     "tailwindcss": "^3.4.3",
+    "typescript": "^5.4.5",
+    "typescript-eslint": "^7.8.0",
     "vite": "^5.2.11",
     "vite-plugin-css-injected-by-js": "^3.5.1",
     "vite-plugin-environment": "^1.1.3",
     "vite-plugin-mock": "^3.0.2",
     "vitest": "^1.6.0"
   },
-  "eslintConfig": {
-    "extends": [
-      "plugin:jsx-a11y/recommended",
-      "plugin:@typescript-eslint/recommended"
-    ]
-  },
   "stylelint": {
     "extends": [
+      "stylelint-config-standard",
       "@navikt/aksel-stylelint/recommended"
-    ]
+    ],
+    "rules": {
+      "selector-class-pattern": null
+    }
   },
   "prettier": {
-    "printWidth": 120
+    "plugins": [
+      "@trivago/prettier-plugin-sort-imports"
+    ],
+    "overrides": [
+      {
+        "files": "**/*.module.css",
+        "options": {
+          "tailwindConfig": "tailwind.config.cjs",
+          "plugins": [
+            "@trivago/prettier-plugin-sort-imports",
+            "prettier-plugin-tailwindcss"
+          ]
+        }
+      },
+      {
+        "files": "**/*.css",
+        "options": {
+          "printWidth": 130
+        }
+      }
+    ],
+    "importOrder": [
+      "^@navikt/(.*)$",
+      "^@/(.*)$",
+      "^[./]"
+    ],
+    "importOrderSortSpecifiers": true
   },
   "lint-staged": {
-    "*.{ts,tsx,css,md,html,json}": [
-      "prettier --cache --write"
-    ]
+    "*.js": "eslint",
+    "*.jsx": "eslint",
+    "*.ts": "eslint",
+    "*.tsx": "eslint",
+    "*.css": "stylelint",
+    "*": "prettier --write --ignore-unknown"
   },
   "engines": {
     "node": ">=20.11.0",
