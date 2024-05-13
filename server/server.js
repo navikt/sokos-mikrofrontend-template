@@ -1,7 +1,8 @@
-import cors from "cors";
-import express from "express";
-import expressStaticGzip from "express-static-gzip";
-import path from "path";
+/* eslint-disable @typescript-eslint/no-var-requires */
+const cors = require("cors");
+const express = require("express");
+const expressStaticGzip = require("express-static-gzip");
+const path = require("path");
 
 const basePath = "/sokos-mikrofrontend-template";
 const buildPath = path.resolve(__dirname, "../dist");
