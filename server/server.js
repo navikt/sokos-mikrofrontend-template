@@ -24,4 +24,5 @@ server.get(
   (_req, res) => res.sendStatus(200),
 );
 
+// eslint-disable-next-line no-console
 server.listen(8080, () => console.log("Server listening on port 8080"));
