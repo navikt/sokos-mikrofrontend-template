@@ -1,6 +1,5 @@
 # Ignore artifacts:
 dist
-dokumentasjon
 mock
 server/build
 **/node_modules
