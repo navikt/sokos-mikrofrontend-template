@@ -14,6 +14,7 @@ export default tseslint.config(
         ...globals.node,
       },
     },
+    ignores: ["server/*"],
     rules: {
       "no-console": "error",
       "no-duplicate-imports": "error",
