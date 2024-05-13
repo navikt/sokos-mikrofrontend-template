@@ -63,8 +63,25 @@
   },
   "prettier": {
     "plugins": [
-      "@trivago/prettier-plugin-sort-imports",
-      "prettier-plugin-tailwindcss"
+      "@trivago/prettier-plugin-sort-imports"
+    ],
+    "overrides": [
+      {
+        "files": "**/*.module.css",
+        "options": {
+          "tailwindConfig": "tailwind.config.cjs",
+          "plugins": [
+            "@trivago/prettier-plugin-sort-imports",
+            "prettier-plugin-tailwindcss"
+          ]
+        }
+      },
+      {
+        "files": "**/*.css",
+        "options": {
+          "printWidth": 130
+        }
+      }
     ],
     "importOrder": [
       "^@navikt/(.*)$",
