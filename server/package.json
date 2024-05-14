@@ -3,7 +3,8 @@
   "version": "1.0.0",
   "description": "server",
   "scripts": {
-    "start": "node server.js"
+    "dev": "nodemon src/server.ts",
+    "build": "tsc --build"
   },
   "author": "navikt",
   "license": "MIT",
@@ -11,6 +12,14 @@
     "cors": "^2.8.5",
     "express": "^4.18.2",
     "express-static-gzip": "^2.1.7"
+  },
+  "devDependencies": {
+    "@types/cors": "^2.8.17",
+    "@types/express": "^4.17.21",
+    "@types/node": "^20.11.16",
+    "nodemon": "^3.0.3",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.3.3"
   },
   "engines": {
     "node": ">=20.11.0",
