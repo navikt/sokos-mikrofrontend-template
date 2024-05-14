@@ -88,8 +88,6 @@
     "importOrderSortSpecifiers": true
   },
   "lint-staged": {
-    "*.js": "eslint",
-    "*.jsx": "eslint",
     "*.ts": "eslint",
     "*.tsx": "eslint",
     "*.css": "stylelint",
