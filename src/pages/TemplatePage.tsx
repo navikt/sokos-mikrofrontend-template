@@ -36,12 +36,12 @@ const TemplatePage = () => {
             </Table.Row>
           </Table.Header>
           <Table.Body>
-            {data?.map(({ id, navn, yrke }, i) => {
+            {data?.map(({ id, name, job }, i) => {
               return (
                 <Table.Row key={i + id}>
                   <Table.HeaderCell scope="row">{id}</Table.HeaderCell>
-                  <Table.DataCell>{navn}</Table.DataCell>
-                  <Table.DataCell>{yrke}</Table.DataCell>
+                  <Table.DataCell>{name}</Table.DataCell>
+                  <Table.DataCell>{job}</Table.DataCell>
                 </Table.Row>
               );
             })}
