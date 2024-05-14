@@ -14,7 +14,6 @@ export default tseslint.config(
         ...globals.node,
       },
     },
-    ignores: ["**/build/*.js"],
     rules: {
       "no-console": "error",
       "no-duplicate-imports": "error",
