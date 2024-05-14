@@ -1,7 +1,7 @@
 {
   "name": "sokos-mikrofrontend-template",
   "version": "1.0.0",
-  "description": "Mikrofrontend template",
+  "description": "Mikrofrontend for Utbetalingsportalen",
   "type": "module",
   "scripts": {
     "dev": "vite",
@@ -93,7 +93,7 @@
     "*.ts": "eslint",
     "*.tsx": "eslint",
     "*.css": "stylelint",
-    "*": "prettier --write"
+    "*": "prettier --write --ignore-unknown"
   },
   "engines": {
     "node": ">=20.11.0",

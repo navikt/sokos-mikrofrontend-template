@@ -1,7 +1,8 @@
 {
-  "name": "server",
+  "name": "sokos-mikrofrontend-template-server",
   "version": "1.0.0",
-  "description": "server",
+  "description": "Server for sokos-mikrofrontend-template",
+  "main": "src/server.ts",
   "scripts": {
     "dev": "nodemon src/server.ts",
     "build": "tsc --build"
