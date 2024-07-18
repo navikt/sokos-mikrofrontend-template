@@ -27,7 +27,7 @@ spec:
     path: /sokos-mikrofrontend-template/internal/metrics
   replicas:
     min: 2
-    max: 4
+    max: 2
   ingresses:
     - "https://utbetalingsportalen.intern.nav.no/sokos-mikrofrontend-template"
     - "https://utbetalingsportalen.ansatt.nav.no/sokos-mikrofrontend-template"
