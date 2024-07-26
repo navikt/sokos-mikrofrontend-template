@@ -24,7 +24,12 @@ NB! Navngi følgende: `sokos-up-appNavn` eg: `sokos-up-navn` (Dette er viktig s�
 1. Installere [Node.js](https://nodejs.dev/en/)
 2. Installer [pnpm](https://pnpm.io/)
 3. Installere dependencies `pnpm install`
-4. Start appen lokalt `pnpm run dev`
+4. Start appen med to følgende måter:
+
+- Mot en mock server -> `pnpm run dev`
+- Mot en backend kjørende lokalt `pnpm run dev-backend`
+  - Gå til [vite.config.ts](/vite.config.ts), endre linje 60 og 61 til det du ønsker.
+
 5. Bruker du ikke routing? Appen nås på <http://localhost:5173>
 6. Bruker du routing? Appen nås på <http://localhost:5173/mikrofrontend>
 
