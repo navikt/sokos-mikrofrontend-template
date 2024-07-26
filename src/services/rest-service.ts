@@ -1,15 +1,19 @@
 import axios from "axios";
 import useSWR from "swr";
-import { ApiError, HttpStatusCodeError } from "../types/errors";
 import { Employee } from "../models/Employee";
+import { ApiError, HttpStatusCodeError } from "../types/errors";
 
-const BASE_API_URL = "/mikrofrontend-api/api";
+const BASE_API_URL = "/mikrofrontend-api/api/v1";
 
 const api = axios.create({
   baseURL: BASE_API_URL,
   timeout: 30000,
   withCredentials: true,
-  headers: { Pragma: "no-cache", "Cache-Control": "no-cache", "Content-Type": "application/json" },
+  headers: {
+    Pragma: "no-cache",
+    "Cache-Control": "no-cache",
+    "Content-Type": "application/json",
+  },
   validateStatus: (status) => status < 400,
 });
 

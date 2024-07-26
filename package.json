@@ -5,9 +5,12 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
+    "dev-backend": "NODE_ENV=development-local vite",
     "build": "vite build",
     "preview": "vite preview",
-    "prepare": "husky"
+    "test": "vitest",
+    "prepare": "husky",
+    "lint": "eslint"
   },
   "dependencies": {
     "@grafana/faro-web-sdk": "^1.8.2",
