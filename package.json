@@ -8,8 +8,8 @@
     "dev:backend": "NODE_ENV=development-local vite",
     "build": "tsc && vite build",
     "test": "vitest",
-    "prepare": "husky",
-    "lint": "eslint"
+    "lint": "eslint",
+    "prepare": "husky"
   },
   "dependencies": {
     "@grafana/faro-web-sdk": "^1.9.0",
