@@ -23,10 +23,12 @@ const TemplatePage = () => {
           Dette er en template for å bygge undersider i Utbetalingsportalen
         </BodyLong>
       </div>
+
       <div className={styles.template__body}>
         <Heading spacing level="2" size="medium">
           Ansatte
         </Heading>
+
         <Table>
           <Table.Header>
             <Table.Row>
@@ -35,6 +37,7 @@ const TemplatePage = () => {
               <Table.HeaderCell scope="col">Yrke</Table.HeaderCell>
             </Table.Row>
           </Table.Header>
+
           <Table.Body>
             {data?.map(({ id, navn, yrke }, i) => {
               return (
