@@ -23,7 +23,6 @@ export default tseslint.config(
     rules: {
       ...jsxA11y.configs.recommended.rules,
       ...reactHooks.configs.recommended.rules,
-      "no-console": "error",
       "no-duplicate-imports": "error",
     },
     settings: {
