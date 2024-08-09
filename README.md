@@ -24,8 +24,7 @@ NB! Navngi følgende: `sokos-up-appNavn` eg: `sokos-up-navn` (Dette er viktig s�
 1. Installere [Node.js](https://nodejs.dev/en/)
 2. Installer [pnpm](https://pnpm.io/)
 3. Installere dependencies `pnpm install`
-4. Sett opp _husky_ -> `pnpm run preprare` (Denne er viktig fordi da vil eslint følge med på alle filendringer!!)
-5. Start appen med to følgende måter:
+4. Start appen med to følgende måter:
 
 - Mot en mock server -> `pnpm run dev`
 - Mot en backend kjørende lokalt `pnpm run dev-backend`
