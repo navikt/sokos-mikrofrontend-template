@@ -5,6 +5,8 @@ import styles from "./TemplatePage.module.css";
 const TemplatePage = () => {
   const { data, isLoading } = RestService.useFetchEmployees();
 
+  console.log(data);
+
   if (isLoading) {
     return (
       <div className={styles.loader}>
