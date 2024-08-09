@@ -17,6 +17,8 @@ const TemplatePage = () => {
     <>
       <div className={styles.template__header}>
         <Heading spacing level="2" size="large">
+
+
           Mikrofrontend Template
         </Heading>
         <BodyLong>
@@ -27,9 +29,14 @@ const TemplatePage = () => {
         <Heading spacing level="2" size="medium">
           Ansatte
         </Heading>
-        <Table>
-          <Table.Header>
-            <Table.Row>
+
+
+        <Table
+        >
+          <
+            Table.Header>
+            <
+              Table.Row>
               <Table.HeaderCell scope="col">Id</Table.HeaderCell>
               <Table.HeaderCell scope="col">Navn</Table.HeaderCell>
               <Table.HeaderCell scope="col">Yrke</Table.HeaderCell>
