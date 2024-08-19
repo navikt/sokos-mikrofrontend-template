@@ -1,9 +1,10 @@
 import { BodyLong, Heading, Loader, Table } from "@navikt/ds-react";
-import RestService from "../services/rest-service";
+import { useGetEmployee } from "../api/apiService";
+import { Employee } from "../types/Employee";
 import styles from "./TemplatePage.module.css";
 
-const TemplatePage = () => {
-  const { data, isLoading } = RestService.useFetchEmployees();
+export default function TemplatePage() {
+  const { data, isLoading } = useGetEmployee();
 
   if (isLoading) {
     return (
@@ -39,12 +40,12 @@ const TemplatePage = () => {
           </Table.Header>
 
           <Table.Body>
-            {data?.map(({ id, navn, yrke }, i) => {
+            {data?.map((employee: Employee) => {
               return (
-                <Table.Row key={i + id}>
-                  <Table.HeaderCell scope="row">{id}</Table.HeaderCell>
-                  <Table.DataCell>{navn}</Table.DataCell>
-                  <Table.DataCell>{yrke}</Table.DataCell>
+                <Table.Row key={employee.id}>
+                  <Table.HeaderCell scope="row">{employee.id}</Table.HeaderCell>
+                  <Table.DataCell>{employee.navn}</Table.DataCell>
+                  <Table.DataCell>{employee.yrke}</Table.DataCell>
                 </Table.Row>
               );
             })}
@@ -53,6 +54,4 @@ const TemplatePage = () => {
       </div>
     </>
   );
-};
-
-export default TemplatePage;
+}

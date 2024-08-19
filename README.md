@@ -1,8 +1,8 @@
 # sokos-mikrofrontend-template
 
-Brukes som utgangspunkt for å opprette nye mikrofrontends i Utbetalingsportalen [sokos-utbetalingsportalen](https://github.com/navikt/sokos-utbetalingsportalen).
+Brukes som utgangspunkt for å opprette nye mikrofrontends i Økonomiportalen.
 
-NB! Navngi følgende: `sokos-up-appNavn` eg: `sokos-up-navn` (Dette er viktig så vi kan holde styr på alle frontend apper tilhører `up` (utbetalingsportalen))
+NB! Navngi følgende: `sokos-op-appNavn` eg: `sokos-op-skattekort`
 
 ## Tilpass repo-et
 
@@ -28,7 +28,18 @@ NB! Navngi følgende: `sokos-up-appNavn` eg: `sokos-up-navn` (Dette er viktig s�
 
 - Mot en mock server -> `pnpm run dev`
 - Mot en backend kjørende lokalt `pnpm run dev-backend`
-  - Gå til [vite.config.ts](/vite.config.ts), endre linje 60 og 61 til det du ønsker.
+  - Gå til [vite.config.ts](/vite.config.ts), endre server.proxy block.
+
+```javascript
+proxy: {
+   "/mikrofrontend-api/api/v1": {
+   target: "https://sokos-mikrofrontend-api.intern.dev.nav.no",
+   rewrite: (path: string) => path.replace(/^\/mikrofrontend-api/, ""),
+   changeOrigin: true,
+   secure: true;
+  }
+}
+```
 
 5. Bruker du ikke routing? Appen nås på <http://localhost:5173>
 6. Bruker du routing? Appen nås på <http://localhost:5173/mikrofrontend>

@@ -1,10 +1,9 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
-import "./index.css";
 import App from "./App";
+import "./index.css";
 
-const root = ReactDOM.createRoot(document.getElementById("root") as HTMLElement);
-root.render(
+ReactDOM.createRoot(document.getElementById("root") as HTMLElement).render(
   <React.StrictMode>
     <div className="page-wrapper">
       <div className="page-layout">
@@ -13,5 +12,5 @@ root.render(
         </main>
       </div>
     </div>
-  </React.StrictMode>
+  </React.StrictMode>,
 );
