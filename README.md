@@ -15,7 +15,7 @@ NB! Navngi følgende: `sokos-op-appNavn` eg: `sokos-op-skattekort`
 4. Slett `setupTemplate.sh` hvis du er ferdig med endre navn på prosjektet
 
 5. Sett riktig namespace og team i nais manifestene, de ligger i mappen under `nais/<cluster>`
-6. Velg riktig ingress til appen i nais.yaml. Ingressen bør være `https://okonomiportalen.intern.dev.nav.no/appNavn`
+6. Velg riktig ingress til appen i nais.yaml. Ingressen bør være `https://utbetalingsportalen.intern.dev.nav.no/appNavn`
 
 # Kom i gang
 
@@ -24,6 +24,21 @@ NB! Navngi følgende: `sokos-op-appNavn` eg: `sokos-op-skattekort`
 3. Installere dependencies `pnpm intall`
 4. Start appen lokalt `pnpm run dev`
 5. Appen nås på http://localhost:5173
+
+### Start appen mot test miljøet
+
+Endre vite.config.ts server.proxy innstilling med:
+
+```javascript
+proxy: {
+   "/mikrofrontend-api/api/v1": {
+   target: "https://sokos-mikrofrontend-api.intern.dev.nav.no",
+   rewrite: (path: string) => path.replace(/^\/mikrofrontend-api/, ""),
+   changeOrigin: true,
+   secure: true
+  }
+}
+```
 
 # Henvendelser
 

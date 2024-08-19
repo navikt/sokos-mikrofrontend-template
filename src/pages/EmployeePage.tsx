@@ -1,9 +1,9 @@
-import { BodyLong, Heading, Loader, Panel, Table } from "@navikt/ds-react";
-import styles from "./Employee.module.css";
-import RestService from "../services/rest-service";
+import { BodyLong, Box, Heading, Loader, Table } from "@navikt/ds-react";
+import styles from "./EmployeePage.module.css";
+import { getEmployees } from "../api/apiService";
 
-const ResultatSide = () => {
-  const { data, isLoading } = RestService.useFetchEmployees();
+export default function ResultatSide() {
+  const { data, isLoading } = getEmployees();
 
   if (isLoading) {
     return (
@@ -15,12 +15,12 @@ const ResultatSide = () => {
 
   return (
     <>
-      <Panel border className={styles.panel}>
+      <Box border className={styles.panel}>
         <Heading spacing level="2" size="large">
           sokos-mikrofrontend-template
         </Heading>
         <BodyLong>Dette er en template for å bygge undersider i Økonomiportalen</BodyLong>
-      </Panel>
+      </Box>
       <Table>
         <Table.Header>
           <Table.Row>
@@ -43,6 +43,4 @@ const ResultatSide = () => {
       </Table>
     </>
   );
-};
-
-export default ResultatSide;
+}

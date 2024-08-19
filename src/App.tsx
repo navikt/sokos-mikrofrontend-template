@@ -1,14 +1,12 @@
 import { useEffect } from "react";
 import { initGrafanaFaro } from "./util/grafanaFaro";
 import "./App.module.css";
-import EmployeePage from "./pages/Employee.page";
+import EmployeePage from "./pages/EmployeePage";
 
-const App = ({ gjelderId }: { gjelderId?: string }) => {
+export default function App() {
   useEffect(() => {
-    initGrafanaFaro();
+    if (window.location.hostname !== "localhost") initGrafanaFaro();
   }, []);
 
   return <EmployeePage />;
-};
-
-export default App;
+}
