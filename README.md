@@ -2,7 +2,7 @@
 
 Brukes som utgangspunkt for å opprette nye mikrofrontends i Økonomiportalen.
 
-NB! Navngi følgende: `sokos-op-appNavn` eg: `sokos-op-skattekort`
+NB! Navngi følgende: `sokos-up-appNavn` eg: `sokos-up-skattekort`
 
 ## Tilpass repo-et
 
@@ -65,6 +65,10 @@ return <BrowserRouter basename="/mikrofrontend">
     </Routes>
   </BrowserRouter>
 ```
+
+## Design
+
+Det finnes et utkast til en designguide kan man basere seg på: [Kjerneoppsett Utbetalingsportalen](https://navno-my.sharepoint.com/:o:/g/personal/julie_utgard_nav_no/EtV6P-sYimZNsACTYqZmSbsBLeSlsvc6PP2svso_H09dZA?e=KSY5SO)
 
 ## Henvendelser
 
