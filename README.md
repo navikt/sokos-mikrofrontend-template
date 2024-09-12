@@ -60,10 +60,17 @@ med
 ```typescript
 return <BrowserRouter basename="/mikrofrontend">
     <Routes>
-      <Route path="/" element={<TemplatePage />} />
-      <Route path="/anotherpage" element={<AnotherPage />} />
+      <Route path={"/"} ErrorBoundary={ErrorBoundary}>
+        <Route path="/" element={<TemplatePage />} />
+        <Route path="/anotherpage" element={<AnotherPage />} />
+      </Route>
     </Routes>
   </BrowserRouter>
+
+function ErrorBoundary(): JSX.Element {
+  const error = useRouteError();
+  throw error;
+}
 ```
 
 ## Design
