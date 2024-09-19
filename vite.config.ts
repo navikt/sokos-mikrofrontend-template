@@ -12,7 +12,7 @@ const reactDomUrl =
   "https://www.nav.no/tms-min-side-assets/react-dom/18/esm/index.js";
 
 export default defineConfig(({ mode }) => ({
-  base: "/mikrofrontend-api",
+  base: "/mikrofrontend",
   build: {
     lib: {
       entry: resolve(__dirname, "src/App.tsx"),
