@@ -1,3 +1,4 @@
+import { createNanoEvents } from "nanoevents";
 import { BodyLong, Heading, Loader, Table } from "@navikt/ds-react";
 import { useGetEmployee } from "../api/apiService";
 import { Employee } from "../types/Employee";
@@ -6,6 +7,8 @@ import styles from "./TemplatePage.module.css";
 export default function TemplatePage() {
   const { data, isLoading } = useGetEmployee();
 
+  const emitter = createNanoEvents();
+
   if (isLoading) {
     return (
       <div className={styles.loader}>
@@ -13,6 +16,10 @@ export default function TemplatePage() {
       </div>
     );
   }
+
+  emitter.on("userData", (data) => {
+    console.log("hva kommer du her?!" + data);
+  });
 
   return (
     <>
