@@ -23,7 +23,7 @@ NB! Navngi følgende: `sokos-up-appNavn` eg: `sokos-up-skattekort`
 
 1. Installere [Node.js](https://nodejs.dev/en/)
 2. Installer [pnpm](https://pnpm.io/)
-3. Installere dependencies `pnpm install`
+3. Installere dependencies `pnpm install && cd server && pnpm install`
 4. Start appen med to følgende måter:
 
 - Mot en mock server -> `pnpm run dev`

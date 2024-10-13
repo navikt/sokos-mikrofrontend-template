@@ -4,7 +4,6 @@
   "description": "Mikrofrontend for Utbetalingsportalen",
   "type": "module",
   "scripts": {
-    "postinstall": "cd server && pnpm install",
     "dev": "vite --mode local-mock",
     "dev:backend": "vite --mode local-dev",
     "build": "tsc && vite build",
