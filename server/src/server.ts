@@ -21,10 +21,13 @@ server.use(
   }),
 );
 
-server.get(
-  [`${basePath}/internal/isAlive`, `${basePath}/internal/isReady`],
-  (_req: Request, res: Response) => res.sendStatus(200),
-);
+server.get(`${basePath}/internal/isAlive`, (req: Request, res: Response) => {
+  res.sendStatus(200);
+});
+
+server.get(`${basePath}/internal/isReady`, (req: Request, res: Response) => {
+  res.sendStatus(200);
+});
 
 // eslint-disable-next-line no-console
 server.listen(8080, () => console.log("Server listening on port 8080"));
