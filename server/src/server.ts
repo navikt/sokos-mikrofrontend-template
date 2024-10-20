@@ -21,11 +21,11 @@ server.use(
   }),
 );
 
-server.get(`${basePath}/internal/isAlive`, (req: Request, res: Response) => {
+server.get(`${basePath}/internal/isAlive`, (_req: Request, res: Response) => {
   res.sendStatus(200);
 });
 
-server.get(`${basePath}/internal/isReady`, (req: Request, res: Response) => {
+server.get(`${basePath}/internal/isReady`, (_req: Request, res: Response) => {
   res.sendStatus(200);
 });
 
