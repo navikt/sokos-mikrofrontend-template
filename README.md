@@ -18,6 +18,7 @@ NB! Navngi følgende: `sokos-up-appNavn` eg: `sokos-up-skattekort`
 
 5. Sett riktig namespace og team i nais manifestene, de ligger i mappen under `nais/<cluster>`
 6. Velg riktig ingress til appen i nais.yaml. Ingressen bør være `https://utbetalingsportalen.intern.dev.nav.no/appNavn`
+7. Repoet må legges til i [Nais Console](https://console.nav.cloud.nais.io/). Det finner du ved å gå inn på team Økonomi og repositories nest nederst til venstre. 
 
 ## Kom i gang
 
