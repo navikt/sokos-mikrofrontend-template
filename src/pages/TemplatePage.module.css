@@ -1,11 +1,11 @@
 .loader {
-  @apply flex justify-center m-10;
+  @apply m-10 flex justify-center;
 }
 
-.template__body {
-  @apply bg-[--a-surface-alt-1-subtle] mx-20 pt-10 p-10;
+.template-body {
+  @apply mx-20 bg-[--a-surface-alt-1-subtle] p-10 pt-10;
 }
 
-.template__header {
-  @apply text-center pb-6 pt-6;
+.template-header {
+  @apply pb-6 pt-6 text-center;
 }

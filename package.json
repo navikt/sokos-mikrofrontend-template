@@ -10,7 +10,8 @@
     "preview": "vite preview",
     "test": "vitest",
     "prepare": "husky",
-    "lint": "eslint"
+    "lint": "eslint",
+    "stylelint": "stylelint '**/*.css'"
   },
   "dependencies": {
     "@grafana/faro-web-sdk": "^1.11.0",
@@ -33,7 +34,6 @@
     "@types/node": "^22.7.7",
     "@types/react": "^18.3.11",
     "@types/react-dom": "^18.3.1",
-    "@typescript-eslint/eslint-plugin": "^8.11.0",
     "@vitejs/plugin-react": "^4.3.3",
     "autoprefixer": "^10.4.20",
     "eslint": "^9.13.0",
@@ -41,6 +41,7 @@
     "eslint-plugin-jsx-a11y": "^6.10.1",
     "eslint-plugin-react": "^7.37.1",
     "eslint-plugin-react-hooks": "^5.0.0",
+    "eslint-plugin-react-refresh": "^0.4.13",
     "globals": "^15.11.0",
     "husky": "^9.1.6",
     "jsdom": "^25.0.1",
@@ -64,9 +65,7 @@
       "stylelint-config-standard",
       "@navikt/aksel-stylelint/recommended"
     ],
-    "rules": {
-      "selector-class-pattern": null
-    }
+    "ignoreFiles": "dist/**/*"
   },
   "prettier": {
     "plugins": [
@@ -100,11 +99,11 @@
   "lint-staged": {
     "*.ts": "eslint",
     "*.tsx": "eslint",
-    "*.css": "stylelint",
+    "*.css": "stylelint --fix",
     "*": "prettier --write --ignore-unknown"
   },
   "engines": {
-    "node": ">=20.16.0",
-    "pnpm": ">=9.6.0"
+    "node": ">=20.18.0",
+    "pnpm": ">=9.12.2"
   }
 }

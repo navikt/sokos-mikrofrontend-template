@@ -11,7 +11,7 @@ export default function TemplatePage() {
 
   return (
     <>
-      <div className={styles.template__header}>
+      <div className={styles["template-header"]}>
         <Heading spacing level="2" size="large">
           Mikrofrontend Template
         </Heading>
@@ -20,7 +20,7 @@ export default function TemplatePage() {
         </BodyLong>
       </div>
 
-      <div className={styles.template__body}>
+      <div className={styles["template-body"]}>
         <Heading spacing level="2" size="medium">
           Ansatte
         </Heading>
