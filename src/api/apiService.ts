@@ -15,7 +15,7 @@ function swrConfig<T>(fetcher: (uri: string) => Promise<T>) {
   };
 }
 
-export default function useGetEmployee() {
+export function useGetEmployee() {
   const { data, error, isValidating } = useSWRImmutable<EmployeeList>(
     `/employee`,
     swrConfig<EmployeeList>((url) =>
