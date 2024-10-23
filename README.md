@@ -2,7 +2,7 @@
 
 Brukes som utgangspunkt for å opprette nye mikrofrontends i Økonomiportalen.
 
-NB! Navngi følgende: `sokos-up-appNavn` eg: `sokos-up-skattekort`
+NB! Navngi følgende: `sokos-up-appNavn` eg: `sokos-up-venteregister`
 
 ## Tilpass repo-et
 
@@ -13,12 +13,12 @@ NB! Navngi følgende: `sokos-up-appNavn` eg: `sokos-up-skattekort`
    ./setupTemplate.sh
    ```
 
-3. Kun spesifiser navnet på applikasjonen som skal stå etter sokos-up-`appNavn`. Hvis du ønsker `sokos-up-test` så skriv inn bare `test`.
+3. Kun spesifiser navnet på applikasjonen som skal stå etter sokos-up-`appNavn`. Hvis du ønsker `sokos-up-venteregister` så skriv inn bare `venteregister`.
 4. Slett `setupTemplate.sh` hvis du er ferdig med endre navn på prosjektet
 
 5. Sett riktig namespace og team i nais manifestene, de ligger i mappen under `nais/<cluster>`
 6. Velg riktig ingress til appen i nais.yaml. Ingressen bør være `https://utbetalingsportalen.intern.dev.nav.no/appNavn`
-7. Repoet må legges til i [Nais Console](https://console.nav.cloud.nais.io/). Det finner du ved å gå inn på team Økonomi og repositories nest nederst til venstre. 
+7. Repoet må legges til i [Nais Console](https://console.nav.cloud.nais.io/). Det finner du ved å gå inn på team Økonomi og repositories nest nederst til venstre.
 
 ## Kom i gang
 
@@ -27,19 +27,19 @@ NB! Navngi følgende: `sokos-up-appNavn` eg: `sokos-up-skattekort`
 3. Installere dependencies `pnpm install && cd server && pnpm install`
 4. Start appen med to følgende måter:
 
-- Mot en mock server -> `pnpm run dev`
-- Mot en backend kjørende lokalt `pnpm run dev-backend`
-  - Gå til [vite.config.ts](/vite.config.ts), endre server.proxy block.
+- Mot [Mock Service Worker](https://mswjs.io/) mock server -> `pnpm run dev:mock`
+- Mot en backend kjørende lokalt på maskinen `pnpm run dev:backend`
+  - Gå til [vite.config.ts](/vite.config.ts), endre til riktig url som skal gå mot backend.
 
 ```javascript
-proxy: {
-   "/mikrofrontend-api/api/v1": {
-   target: "https://sokos-mikrofrontend-api.intern.dev.nav.no",
-   rewrite: (path: string) => path.replace(/^\/mikrofrontend-api/, ""),
-   changeOrigin: true,
-   secure: true;
-  }
-}
+...(mode === "backend" && {
+        "/mikrofrontend-api/api/v1": {
+          target: "http://localhost:8080",
+          rewrite: (path: string) => path.replace(/^\/mikrofrontend-api/, ""),
+          changeOrigin: true,
+          secure: false,
+        },
+      }),
 ```
 
 5. Bruker du ikke routing? Appen nås på <http://localhost:5173>

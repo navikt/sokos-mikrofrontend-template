@@ -5,7 +5,6 @@ import { resolve } from "path";
 import { defineConfig } from "vite";
 import cssInjectedByJsPlugin from "vite-plugin-css-injected-by-js";
 import EnvironmentPlugin from "vite-plugin-environment";
-import { viteMockServe } from "vite-plugin-mock";
 
 const reactUrl = "https://www.nav.no/tms-min-side-assets/react/18/esm/index.js";
 const reactDomUrl =
@@ -26,29 +25,29 @@ export default defineConfig(({ mode }) => ({
       generateScopedName: "[name]__[local]___[hash:base64:5]",
     },
   },
-  server:
-    mode == "local-dev"
-      ? {
-          proxy: {
-            "/mikrofrontend-api/api/v1/employee": {
-              target: "http://localhost:8080",
-              rewrite: (path: string) =>
-                path.replace(/^\/mikrofrontend-api/, ""),
-              changeOrigin: true,
-              secure: false,
-            },
-          },
-        }
-      : {},
+  server: {
+    proxy: {
+      ...(mode === "backend" && {
+        "/mikrofrontend-api/api/v1": {
+          target: "http://localhost:8080",
+          rewrite: (path: string) => path.replace(/^\/oppdrag-api/, ""),
+          changeOrigin: true,
+          secure: false,
+        },
+      }),
+      ...(mode === "mock" && {
+        "/mockServiceWorker.js": {
+          target: "http://localhost:5173",
+          rewrite: () => "mikrofrontend/mockServiceWorker.js",
+        },
+      }),
+    },
+  },
   plugins: [
     react(),
     cssInjectedByJsPlugin(),
     EnvironmentPlugin({
       NODE_ENV: process.env.NODE_ENV || "development",
-    }),
-    viteMockServe({
-      mockPath: "mock",
-      enable: mode === "local-mock",
     }),
     {
       ...importMapPlugin({

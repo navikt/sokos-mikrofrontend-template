@@ -5,7 +5,8 @@ import { initGrafanaFaro } from "./util/grafanaFaro";
 
 export default function App() {
   useEffect(() => {
-    initGrafanaFaro();
+    if (import.meta.env.MODE !== "mock" && import.meta.env.MODE !== "backend")
+      initGrafanaFaro();
   }, []);
 
   return <TemplatePage />;

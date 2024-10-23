@@ -3,10 +3,21 @@ import { Employee } from "../types/Employee";
 import styles from "./TemplatePage.module.css";
 
 export default function TemplatePage() {
-  const employees = [
-    { id: 1, navn: "Ola Nordmann", yrke: "Lærer" },
-    { id: 2, navn: "Kari Nordmann", yrke: "Sykepleier" },
-    { id: 3, navn: "Per Hansen", yrke: "Elektriker" },
+  // Marker ut denne for at kallet går mot Mock Service Worker
+  /*   const { data, isLoading } = useGetEmployee();
+
+  if (isLoading) {
+    return (
+      <div className={styles.loader}>
+        <Loader size="3xlarge" title="Henter data..." />
+      </div>
+    );
+  } */
+
+  const data = [
+    { id: 1, name: "Ola Nordmann", profession: "Lærer" },
+    { id: 2, name: "Kari Nordmann", profession: "Sykepleier" },
+    { id: 3, name: "Per Hansen", profession: "Elektriker" },
   ];
 
   return (
@@ -35,12 +46,12 @@ export default function TemplatePage() {
           </Table.Header>
 
           <Table.Body>
-            {employees?.map((employee: Employee) => {
+            {data?.map((employee: Employee) => {
               return (
                 <Table.Row key={employee.id}>
                   <Table.HeaderCell scope="row">{employee.id}</Table.HeaderCell>
-                  <Table.DataCell>{employee.navn}</Table.DataCell>
-                  <Table.DataCell>{employee.yrke}</Table.DataCell>
+                  <Table.DataCell>{employee.name}</Table.DataCell>
+                  <Table.DataCell>{employee.profession}</Table.DataCell>
                 </Table.Row>
               );
             })}

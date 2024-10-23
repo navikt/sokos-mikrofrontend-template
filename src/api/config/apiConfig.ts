@@ -1,5 +1,5 @@
 import axios, { CreateAxiosDefaults } from "axios";
-import { ApiError, HttpStatusCodeError } from "../types/errors";
+import { ApiError, HttpStatusCodeError } from "../../types/Error";
 
 const config = (baseUri: string): CreateAxiosDefaults => ({
   baseURL: baseUri,
@@ -33,10 +33,16 @@ function api(baseUri: string) {
   return instance;
 }
 
-export const BASE_API_URL = "/mikrofrontend-api/api/v1";
+export async function axiosFetcher<T>(baseUri: string, url: string) {
+  const res = await api(baseUri).get<T>(url);
+  return res.data;
+}
 
-export function axiosFetcher<T>(baseUri: string, url: string) {
-  return api(baseUri)
-    .get<T>(url)
-    .then((res) => res.data);
+export async function axiosPostFetcher<T, U>(
+  baseUri: string,
+  url: string,
+  body?: T,
+) {
+  const res = await api(baseUri).post<U>(url, body);
+  return res.data;
 }

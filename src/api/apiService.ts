@@ -1,14 +1,28 @@
 import useSWRImmutable from "swr/immutable";
-import { EmployeeListe } from "../types/Employee";
-import { BASE_API_URL, axiosFetcher } from "./apiConfig";
+import { EmployeeList } from "../types/Employee";
+import { axiosFetcher } from "./config/apiConfig";
 
-const swrConfig = {
-  fetcher: <T>(url: string) => axiosFetcher<T>(BASE_API_URL, url),
-  suspense: true,
-  revalidateOnFocus: false,
-  refreshInterval: 120000,
+const BASE_URI = {
+  BACKEND_API: "/mikrofrontend-api/api/v1",
 };
 
-export function useGetEmployee() {
-  return useSWRImmutable<EmployeeListe>(`/employee`, swrConfig);
+function swrConfig<T>(fetcher: (uri: string) => Promise<T>) {
+  return {
+    fetcher,
+    suspense: true,
+    revalidateOnFocus: false,
+    refreshInterval: 600000,
+  };
+}
+
+export default function useGetEmployee() {
+  const { data, error, isValidating } = useSWRImmutable<EmployeeList>(
+    `/employee`,
+    swrConfig<EmployeeList>((url) =>
+      axiosFetcher<EmployeeList>(BASE_URI.BACKEND_API, url),
+    ),
+  );
+  const isLoading = (!error && !data) || isValidating;
+
+  return { data, error, isLoading };
 }
