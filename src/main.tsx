@@ -7,9 +7,7 @@ const startMsw = async () => {
   if (import.meta.env.MODE === "mock") {
     try {
       const { worker } = await import("../mock/browser");
-      await worker.start({
-        onUnhandledRequest: "bypass", // for assets o.l.
-      });
+      await worker.start();
     } catch (error) {
       // eslint-disable-next-line no-console
       console.error("Failed to start MSW", error);
