@@ -1,4 +1,4 @@
-FROM gcr.io/distroless/nodejs20-debian12@sha256:04350092341fdc31bd1c9c7cac4f50f9194652f3afd8d4a442428b102c9d66c2
+FROM gcr.io/distroless/nodejs20-debian12@sha256:7500372171c136d2076c18cd19c6d44ab61d16c182920b179786815a2d7bcc11
 
 WORKDIR /usr/src/app
 COPY dist dist/
