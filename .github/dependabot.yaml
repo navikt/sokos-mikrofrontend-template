@@ -1,13 +1,25 @@
 version: 2
 updates:
-  # Maintain dependencies for npm
-  - package-ecosystem: "npm"
+  - package-ecosystem: npm
     directory: "/"
     schedule:
-      interval: "daily"
+      interval: weekly
+      day: "monday"
+      time: "09:00"
+      timezone: "Europe/Oslo"
+    groups:
+      npm:
+        patterns:
+          - "*"
 
-  # Maintain dependencies for npm
-  - package-ecosystem: "npm"
+  - package-ecosystem: npm
     directory: "/server"
     schedule:
-      interval: "daily"
+      interval: weekly
+      day: "monday"
+      time: "09:00"
+      timezone: "Europe/Oslo"
+    groups:
+      npm:
+        patterns:
+          - "*"
