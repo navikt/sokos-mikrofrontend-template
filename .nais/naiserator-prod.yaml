@@ -9,11 +9,6 @@ metadata:
     config.linkerd.io/proxy-memory-limit: "512Mi"
     config.linkerd.io/proxy-memory-request: "128Mi"
 spec:
-  env:
-  - name: CORS_ALLOWED_ORIGIN_INTERN
-    value: "https://utbetalingsportalen.intern.nav.no"
-  - name: CORS_ALLOWED_ORIGIN_ANSATT
-    value: "https://utbetalingsportalen.ansatt.nav.no"
   image: "{{ image }}"
   port: 8080
   liveness:
