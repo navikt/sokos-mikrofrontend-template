@@ -9,6 +9,8 @@ const server = express();
 
 const corsAllowedOrigin = [
   /https:\/\/utbetalingsportalen(-.*|\.dev)?\.intern(\.dev)?\.nav\.no/,
+  /https:\/\/utbetalingsportalen\.intern\.nav\.no/,
+  /https:\/\/utbetalingsportalen\.ansatt\.nav\.no/,
   "http://localhost:5173",
 ];
 
