@@ -3,9 +3,7 @@ updates:
   - package-ecosystem: npm
     directory: "/"
     schedule:
-      interval: weekly
-      day: "monday"
-      time: "06:00"
+      interval: daily
       timezone: "Europe/Oslo"
     groups:
       npm:
@@ -15,9 +13,7 @@ updates:
   - package-ecosystem: npm
     directory: "/server"
     schedule:
-      interval: weekly
-      day: "monday"
-      time: "06:00"
+      interval: daily
       timezone: "Europe/Oslo"
     groups:
       npm:
