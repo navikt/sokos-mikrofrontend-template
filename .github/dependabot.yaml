@@ -17,6 +17,10 @@ updates:
     allow:
       - dependency-name: "@navikt/*"
     groups:
+      aksel-dependencies:
+        patterns:
+          - '@navikt/aksel*'
+          - '@navikt/ds*'
       npm:
         patterns:
           - "*"
