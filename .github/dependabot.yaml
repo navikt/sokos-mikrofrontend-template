@@ -21,9 +21,6 @@ updates:
         patterns:
           - '@navikt/aksel*'
           - '@navikt/ds*'
-      npm:
-        patterns:
-          - "*"
 
   - package-ecosystem: npm
     directory: "/server"
