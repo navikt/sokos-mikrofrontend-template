@@ -14,6 +14,8 @@ updates:
       timezone: "Europe/Oslo"
     registries:
       - npm-github
+    allow:
+      - dependency-name: "@navikt/*"
     groups:
       npm:
         patterns:
