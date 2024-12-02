@@ -3,6 +3,9 @@ name: Build/test and validate PR
 on:
   pull_request:
 
+env:
+  NODE_AUTH_TOKEN: ${{ secrets.READER_TOKEN }}
+
 jobs:
   build-pr:
     name: Build and test
