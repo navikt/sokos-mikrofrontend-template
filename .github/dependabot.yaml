@@ -1,4 +1,9 @@
 version: 2
+registries:
+  npm-github:
+    type: npm-registry
+    url: https://npm.pkg.github.com
+    token: ${{secrets.READER_TOKEN}}
 updates:
   - package-ecosystem: npm
     directory: "/"
@@ -7,6 +12,8 @@ updates:
       day: "monday"
       time: "06:00"
       timezone: "Europe/Oslo"
+    registries:
+      - npm-github
     groups:
       npm:
         patterns:
