@@ -14,7 +14,7 @@ jobs:
       !contains(github.event.pull_request.changed_files, 'CODEOWNERS') &&
       !contains(github.event.pull_request.changed_files, '.gitignore') &&
       !contains(github.event.pull_request.changed_files, 'README.md') &&
-      !contains(github.event.pull_request.changed_files, 'dokumentasjon/**') &&
+      !contains(github.event.pull_request.changed_files, 'dokumentasjon') &&
       !contains(github.event.pull_request.changed_files, '.nais/**') &&
       !contains(github.event.pull_request.changed_files, '.github/dependabot.yaml') &&
       !contains(github.event.pull_request.changed_files, '.github/workflows/deploy.yaml') &&
