@@ -1,1 +1,1 @@
-# Ekstra dokumentasjon kommer her
+# Ekstra dokumentasjon tilhørende frontend kommer her
