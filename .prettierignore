@@ -1,7 +1,8 @@
 # Ignore artifacts:
+dokumentasjon
+public
 dist
-mock
 server/build
 **/node_modules
-*.yml
-*.yaml
+**/github*.yaml
+**/nais*.yaml
