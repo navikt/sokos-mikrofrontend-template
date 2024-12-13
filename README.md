@@ -16,9 +16,12 @@ NB! Navngi følgende: `sokos-up-appNavn` eg: `sokos-up-venteregister`
 3. Kun spesifiser navnet på applikasjonen som skal stå etter sokos-up-`appNavn`. Hvis du ønsker `sokos-up-venteregister` så skriv inn bare `venteregister`.
 4. Slett `setupTemplate.sh` hvis du er ferdig med endre navn på prosjektet
 
-5. Sett riktig namespace og team i nais manifestene, de ligger i mappen under `nais/<cluster>`
-6. Velg riktig ingress til appen i nais.yaml. Ingressen bør være `https://utbetalingsportalen.intern.dev.nav.no/appNavn`
-7. Repoet må legges til i [Nais Console](https://console.nav.cloud.nais.io/). Det finner du ved å gå inn på team Økonomi og repositories nest nederst til venstre.
+5. Templaten er også forhåndsinstallert med [Playwright](https://playwright.dev/). Oppdatert både [playwright.config.ts](playwright.config.ts) og [accessibility.spec.ts](playwright-tests/accessibility.spec.ts). Kjør testene med kommandoen `pnpm exec playwright test`.
+
+6. Sett riktig namespace og team i nais manifestene, de ligger i mappen under `nais/<cluster>`
+7. Velg riktig ingress til appen i nais.yaml. Ingressen bør være `https://utbetalingsportalen.intern.dev.nav.no/appNavn`
+8. Repoet må legges til i [Nais Console](https://console.nav.cloud.nais.io/). Det finner du ved å gå inn på team Økonomi og repositories nest nederst til venstre.
+9. Templaten følger med følgende workflows: Pull Requests sjekk, Deploy av applikasjonen, manuell deploy av applikasjonen, playwright og sjekk for sårbarheter.
 
 ## Kom i gang
 
