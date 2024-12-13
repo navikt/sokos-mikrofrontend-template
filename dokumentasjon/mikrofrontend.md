@@ -1,1 +1,1 @@
-# Her skal det stå dokumentasjon om hva denne frontend går ut på
+# Ment for ekstra dokumentasjon
