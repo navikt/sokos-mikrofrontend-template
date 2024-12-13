@@ -3,9 +3,28 @@ on:
   push:
     branches:
       - main
+    paths-ignore:
+      - "**.md"
+      - "LICENCE"
+      - "CODEOWNERS"
+      - ".gitignore"
+      - ".github/workflows/build-pr.yaml"
+      - ".github/workflows/manual-deploy-dev.yaml"
+      - ".github/workflows/security.yaml"
+      - ".github/dependabot.yaml"
+
   pull_request:
     branches:
       - main
+    paths-ignore:
+      - "**.md"
+      - "LICENCE"
+      - "CODEOWNERS"
+      - ".gitignore"
+      - ".github/workflows/build-pr.yaml"
+      - ".github/workflows/manual-deploy-dev.yaml"
+      - ".github/workflows/security.yaml"
+      - ".github/dependabot.yaml"
 jobs:
   build-pr:
     name: Playwright test
