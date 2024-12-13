@@ -1,1 +1,1 @@
-# Her kommer ekstra dokumentasjon
+# Ekstra dokumentasjon
