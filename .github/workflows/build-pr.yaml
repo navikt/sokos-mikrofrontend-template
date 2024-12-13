@@ -2,6 +2,16 @@ name: Build/test and validate PR
 
 on:
   pull_request:
+    paths-ignore:
+      - "**.md"
+      - "LICENCE"
+      - "CODEOWNERS"
+      - ".gitignore"
+      - ".github/workflows/build-pr.yaml"
+      - ".github/workflows/manual-deploy-dev.yaml"
+      - ".github/workflows/playwright.yaml"
+      - ".github/workflows/security.yaml"
+      - ".github/dependabot.yaml"
 
 jobs:
   build-pr:
