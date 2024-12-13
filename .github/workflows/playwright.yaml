@@ -1,19 +1,19 @@
-name: Build/test and validate PR
-
+name: Playwright Tests
 on:
+  push:
+    branches:
+      - main
   pull_request:
-
+    branches:
+      - main
 jobs:
   build-pr:
-    name: Build and test
+    name: Playwright test
     if: >
-      !contains(github.event.pull_request.changed_files, 'LICENSE') &&
-      !contains(github.event.pull_request.changed_files, 'CODEOWNERS') &&
-      !contains(github.event.pull_request.changed_files, '.gitignore') &&
       !contains(github.event.pull_request.changed_files, '.nais/**') &&
       !contains(github.event.pull_request.changed_files, '.github/dependabot.yml') &&
       !contains(github.event.pull_request.changed_files, '.github/workflows/deploy.yaml') &&
       !contains(github.event.pull_request.changed_files, '.github/workflows/manual-deploy-dev.yaml') &&
-      !contains(github.event.pull_request.changed_files, '.github/workflows/playwright.yaml') &&
+      !contains(github.event.pull_request.changed_files, '.github/workflows/build-pr.yaml') &&
       !contains(github.event.pull_request.changed_files, '.github/workflows/security.yaml')
-    uses: navikt/monster-gha-workflows/.github/workflows/node-build-pr.yaml@main
+    uses: navikt/monster-gha-workflows/.github/workflows/playwright.yaml@main
