@@ -26,6 +26,6 @@ on:
       - ".github/workflows/security.yaml"
       - ".github/dependabot.yaml"
 jobs:
-  build-pr:
+  playwright-test:
     name: Playwright test
     uses: navikt/monster-gha-workflows/.github/workflows/playwright.yaml@main
