@@ -70,7 +70,7 @@ export default defineConfig({
     // },
   ],
   webServer: {
-    command: "pnpm run dev:mock",
+    command: "pnpm run dev",
     url: "http://localhost:5173/mikrofrontend",
     reuseExistingServer: !process.env.CI,
   },
