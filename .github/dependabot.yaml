@@ -14,7 +14,7 @@ updates:
       day: "monday"
       time: "06:00"
       timezone: "Europe/Oslo"
-    open-pull-requests-limit: 10
+    open-pull-requests-limit: 20
     groups:
       aksel:
         patterns:
