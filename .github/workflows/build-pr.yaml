@@ -16,5 +16,5 @@ on:
 jobs:
   build-pr:
     name: Build and test
-    uses: navikt/mob-gha-workflows/.github/workflows/node-build-pr.yaml@main
+    uses: navikt/mob-gha-workflows/.github/workflows/node-build-pr.yaml@legge_npmjs_registry
     secrets: inherit
