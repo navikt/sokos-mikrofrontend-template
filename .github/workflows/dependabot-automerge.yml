@@ -137,8 +137,8 @@ jobs:
                     {
                         owner: context.repo.owner,
                         repo: context.repo.repo,
-                        workflow_id: 'deploy.yaml', // TODO change to match your environment
-                        ref: 'main',                 // TODO change to match your environment
+                        workflow_id: 'deploy.yaml', 
+                        ref: 'main',                
                     }
                 )
             } else {
