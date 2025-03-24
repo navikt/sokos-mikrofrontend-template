@@ -1,7 +1,7 @@
 name: Merge Dependabot PRs
 on:
   schedule:
-    cron: '0 10 * * *'
+    - cron: "0 10 * * *"
 
 permissions:
   contents: write
@@ -37,7 +37,7 @@ jobs:
               return (today >= sommerStart && today <= sommerSlutt) || (today >= julStart && today <= julSlutt) || (today >= nyttaarStart && today <= nyttaarSlutt)
             } 
 
-            
+
 
             if (erFerie()) {
                 console.log('Skriptet kjører ikke i ferier');
