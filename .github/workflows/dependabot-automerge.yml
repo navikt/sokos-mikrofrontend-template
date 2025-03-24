@@ -51,6 +51,9 @@ jobs:
                 repo: context.repo.repo,
             })
 
+            console.log('Antall PRs:', pulls.data.length)
+            console.log('PRs:', pulls.data.map(it => it.title))
+
             if (pulls.data.length === 0) {
                 console.log('Ingen PRs funnet -> ingenting å gjøre.');
                 return;
@@ -69,6 +72,10 @@ jobs:
 
                     }
                 })
+
+            console.log('Antall PRs som kan merges:', filtrert.length)
+            console.log('PRs som kan merges:', filtrert.map(it => it.title))
+
                 .map(async (it) => {
                     const QUERY = `query($owner: String!, $repo: String!, $pull_number: Int!) {
                                           repository(owner: $owner, name:$repo) {
@@ -100,6 +107,8 @@ jobs:
                         checksOk: lastCommit.statusCheckRollup?.state === 'SUCCESS',
                     }
                 })
+
+            console.log('Antall PRs som kan merges og har OK checks:', filtrert.length)
 
             const allePrs = await Promise.all(filtrert)
             const mergeablePromise = allePrs
