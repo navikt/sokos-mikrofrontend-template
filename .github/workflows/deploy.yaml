@@ -15,7 +15,7 @@ on:
       - ".github/workflows/security.yaml"
       - ".github/dependabot.yaml"
   repository_dispatch:
-    types: [deploy]
+    types: [dependabot-deploy]
 
 env:
   TZ: Europe/Oslo
