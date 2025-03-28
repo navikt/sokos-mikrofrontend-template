@@ -14,6 +14,8 @@ on:
       - ".github/workflows/playwright.yaml"
       - ".github/workflows/security.yaml"
       - ".github/dependabot.yaml"
+  repository_dispatch:
+    types: [deploy]
 
 env:
   TZ: Europe/Oslo
@@ -36,7 +38,6 @@ jobs:
       cluster: dev-gcp
       resource: .nais/naiserator-dev.yaml
       image: ${{ needs.build.outputs.image }}
-
 #  deploy-prod:
 #    needs: [build, deploy-dev]
 #    name: Deploy to prod-gcp
