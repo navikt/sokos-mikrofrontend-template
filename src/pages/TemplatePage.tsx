@@ -24,10 +24,10 @@ export default function TemplatePage() {
     <>
       <div className={styles["template-header"]}>
         <Heading spacing level="1" size="large">
-          Mikrofrontend Template
+          Grensesnittmal for Utbetalingsportalen
         </Heading>
         <BodyLong>
-          Dette er en template for å bygge undersider i Utbetalingsportalen
+          Dette er en mal for å bygge mikrofrontend i Utbetalingsportalen
         </BodyLong>
       </div>
 
