@@ -12,6 +12,7 @@ on:
       - ".github/workflows/playwright.yaml"
       - ".github/workflows/security.yaml"
       - ".github/dependabot.yaml"
+      - ".github/workflows/dependabot-automerge.yaml"
 
 jobs:
   build-pr:

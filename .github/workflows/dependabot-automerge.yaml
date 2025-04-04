@@ -1,5 +1,16 @@
 name: Dependabot auto-merge
-on: pull_request
+on:
+  pull_request:
+    paths-ignore:
+      - "**.md"
+      - "LICENCE"
+      - "CODEOWNERS"
+      - ".gitignore"
+      - ".github/workflows/deploy.yaml"
+      - ".github/workflows/manual-deploy-dev.yaml"
+      - ".github/workflows/playwright.yaml"
+      - ".github/workflows/security.yaml"
+      - ".github/dependabot.yaml"
 
 jobs:
   dependabot-automerge:
