@@ -2,31 +2,8 @@ name: Dependabot auto-merge
 on: pull_request
 
 jobs:
-  dependabot:
-    runs-on: ubuntu-latest
-    if: ${{ github.event.pull_request.user.login == 'dependabot[bot]' }}
-    permissions:
-      contents: write
-      pull-requests: write
-    steps:
-      - name: Dependabot metadata
-        id: metadata
-        uses: dependabot/fetch-metadata@d7267f607e9d3fb96fc2fbe83e0af444713e90b7
-        with:
-          github-token: ${{ secrets.GITHUB_TOKEN }}
-      - name: Auto-merge changes from Dependabot
-        # Auto-merges all dependabot PRs except for major version updates
-        # Auto-merges everything if the package ecosystem is GitHub Actions
-        if: steps.metadata.outputs.update-type != 'version-update:semver-major' || steps.metadata.outputs.package-ecosystem == 'github_actions'
-        run: gh pr merge --auto --squash "$PR_URL"
-        env:
-          PR_URL: ${{github.event.pull_request.html_url}}
-          GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
-      - name: Run deploy workflow
-        if: success()
-        env:
-          GH_TOKEN: ${{ github.token }}
-        run: |
-          gh api repos/${{ github.repository }}/dispatches \
-            -H "X-GitHub-Api-Version: 2022-11-28" \
-            -F "event_type=dependabot-deploy"
+  dependabot-automerge:
+    if: github.event.pull_request.user.login == 'dependabot[bot]'
+    name: Dependabot auto-merge
+    uses: navikt/mob-gha-workflows/.github/workflows/dependabot-automerge.yaml@main
+    secrets: inherit
