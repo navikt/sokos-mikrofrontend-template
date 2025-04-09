@@ -18,10 +18,11 @@ jobs:
     permissions:
       contents: write
       pull-requests: write
+      checks: read
     steps:
       - name: Dependabot metadata
         id: metadata
-        uses: dependabot/fetch-metadata@d7267f607e9d3fb96fc2fbe83e0af444713e90b7
+        uses: dependabot/fetch-metadata@v1
         with:
           github-token: ${{ secrets.GITHUB_TOKEN }}
 
@@ -30,21 +31,40 @@ jobs:
         with:
           script: |
             const pr = context.payload.pull_request;
-            const { data: checks } = await github.checks.listForRef({
-              owner: context.repo.owner,
-              repo: context.repo.repo,
-              ref: pr.head.sha,
-            });
-            if (checks.check_runs.some(check => check.conclusion !== 'success')) {
-              throw new Error('Not all checks have passed.');
+            const delay = (ms) => new Promise(resolve => setTimeout(resolve, ms));
+
+            while (true) {
+              const { data: checks } = await github.checks.listForRef({
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                ref: pr.head.sha,
+              });
+
+              const inProgress = checks.check_runs.some(check => check.status === 'in_progress' || check.status === 'queued');
+              const failed = checks.check_runs.some(check => check.conclusion === 'failure');
+              const success = checks.check_runs.every(check => check.conclusion === 'success');
+
+              if (failed) {
+                throw new Error('One or more checks have failed.');
+              }
+
+              if (success) {
+                break;
+              }
+
+              if (inProgress) {
+                console.log('Checks are still running. Waiting...');
+                await delay(10000);
+              }
             }
 
       - name: Auto-merge changes from Dependabot
         if: steps.metadata.outputs.update-type != 'version-update:semver-major' || steps.metadata.outputs.package-ecosystem == 'github_actions'
         run: gh pr merge --auto --squash "$PR_URL"
         env:
-          PR_URL: ${{github.event.pull_request.html_url}}
-          GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
+          PR_URL: ${{ github.event.pull_request.html_url }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
       - name: Run deploy workflow
         if: success()
         env:
