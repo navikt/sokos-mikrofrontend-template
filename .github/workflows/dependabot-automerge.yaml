@@ -40,14 +40,22 @@ jobs:
                 ref: pr.head.sha,
               });
 
-              console.log('Check statuses:', checks.check_runs.map(check => ({
+              // Filter to keep only the latest status for each unique check name
+              const uniqueChecks = Object.values(
+                checks.check_runs.reduce((acc, check) => {
+                  acc[check.name] = check; // Overwrite with the latest occurrence
+                  return acc;
+                }, {})
+              );
+
+              console.log('Filtered check statuses:', uniqueChecks.map(check => ({
                 name: check.name,
                 status: check.status,
                 conclusion: check.conclusion,
               })));
 
               // Exclude the current workflow's check
-              const filteredChecks = checks.check_runs.filter(check => check.name !== 'Dependabot auto-merge');
+              const filteredChecks = uniqueChecks.filter(check => check.name !== 'Dependabot auto-merge');
 
               const inProgress = filteredChecks.some(check => check.status === 'in_progress' || check.status === 'queued');
               const failed = filteredChecks.some(check => check.conclusion === 'failure');
