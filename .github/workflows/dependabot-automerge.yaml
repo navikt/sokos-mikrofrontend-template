@@ -37,13 +37,15 @@ jobs:
               const { data: checks } = await github.rest.checks.listForRef({
                 owner: context.repo.owner,
                 repo: context.repo.repo,
-                ref: pr.head.sha,
+                ref: pr.head.sha, // Ensure only the latest commit is considered
               });
 
               // Filter to keep only the latest status for each unique check name
               const uniqueChecks = Object.values(
                 checks.check_runs.reduce((acc, check) => {
-                  acc[check.name] = check; // Overwrite with the latest occurrence
+                  if (check.head_sha === pr.head.sha) { // Only include checks for the latest commit
+                    acc[check.name] = check; // Overwrite with the latest occurrence
+                  }
                   return acc;
                 }, {})
               );
