@@ -40,15 +40,25 @@ jobs:
                 ref: pr.head.sha,
               });
 
-              const inProgress = checks.check_runs.some(check => check.status === 'in_progress' || check.status === 'queued');
-              const failed = checks.check_runs.some(check => check.conclusion === 'failure');
-              const success = checks.check_runs.every(check => check.conclusion === 'success');
+              console.log('Check statuses:', checks.check_runs.map(check => ({
+                name: check.name,
+                status: check.status,
+                conclusion: check.conclusion,
+              })));
+
+              // Exclude the current workflow's check
+              const filteredChecks = checks.check_runs.filter(check => check.name !== 'Dependabot auto-merge');
+
+              const inProgress = filteredChecks.some(check => check.status === 'in_progress' || check.status === 'queued');
+              const failed = filteredChecks.some(check => check.conclusion === 'failure');
+              const success = filteredChecks.every(check => check.conclusion === 'success');
 
               if (failed) {
                 throw new Error('One or more checks have failed.');
               }
 
               if (success) {
+                console.log('All checks (excluding this workflow) have passed.');
                 break;
               }
 
