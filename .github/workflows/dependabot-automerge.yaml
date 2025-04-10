@@ -12,7 +12,7 @@ on:
       - ".github/workflows/security.yaml"
 
 jobs:
-  dependabot:
+  dependabot-automerge:
     runs-on: ubuntu-latest
     if: ${{ github.event.pull_request.user.login == 'dependabot[bot]' }}
     permissions:
@@ -57,7 +57,7 @@ jobs:
               })));
 
               // Exclude the current workflow's check
-              const filteredChecks = uniqueChecks.filter(check => check.name !== 'dependabot');
+              const filteredChecks = uniqueChecks.filter(check => check.name !== 'dependabot-automerge');
 
               const inProgress = filteredChecks.some(check => check.status === 'in_progress' || check.status === 'queued');
               const failed = filteredChecks.some(check => check.conclusion === 'failure');
@@ -79,6 +79,7 @@ jobs:
             }
 
       - name: Auto-merge changes from Dependabot
+        id: auto-merge
         if: steps.metadata.outputs.update-type != 'version-update:semver-major' || steps.metadata.outputs.package-ecosystem == 'github_actions'
         run: gh pr merge --auto --squash "$PR_URL"
         env:
@@ -86,7 +87,7 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Run deploy workflow
-        if: success()
+        if: steps.auto-merge.outcome == 'success'
         env:
           GH_TOKEN: ${{ github.token }}
         run: |
