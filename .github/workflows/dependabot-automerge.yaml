@@ -64,16 +64,23 @@ jobs:
               const success = filteredChecks.every(check => check.conclusion === 'success');
 
               if (failed) {
+                const failedChecks = filteredChecks
+                  .filter(check => check.conclusion === 'failure')
+                  .map(check => `${check.name}: ${check.conclusion}`);
+                console.error('The following checks have failed:', failedChecks.join(', '));
                 throw new Error('One or more checks have failed.');
               }
 
-              if (success) {
+              if (success && !inProgress) {
                 console.log('All checks (excluding this workflow) have passed.');
                 break;
               }
 
-              if (inProgress) {
-                console.log('Checks are still running. Waiting...');
+              if (inProgress || filteredChecks.some(check => check.status === 'queued')) {
+                console.log('Checks are still running or queued. Waiting...');
+                await delay(10000);
+              } else {
+                console.log('Waiting for checks to re-run...');
                 await delay(10000);
               }
             }
