@@ -1,6 +1,8 @@
-name: Dependabot auto-merge
+name: Dependabot Auto-merge
+
 on:
   pull_request:
+    branches: [main]
     paths-ignore:
       - "**.md"
       - "LICENCE"
@@ -10,94 +12,15 @@ on:
       - ".github/workflows/manual-deploy-dev.yaml"
       - ".github/workflows/playwright.yaml"
       - ".github/workflows/security.yaml"
+      - ".github/dependabot.yaml"
+
+permissions:
+  contents: write
+  pull-requests: write
+  checks: read
 
 jobs:
   dependabot-automerge:
-    runs-on: ubuntu-latest
-    if: ${{ github.event.pull_request.user.login == 'dependabot[bot]' }}
-    permissions:
-      contents: write
-      pull-requests: write
-      checks: read
-    steps:
-      - name: Dependabot metadata
-        id: metadata
-        uses: dependabot/fetch-metadata@v1
-        with:
-          github-token: ${{ secrets.GITHUB_TOKEN }}
-
-      - name: Wait for checks to pass
-        uses: actions/github-script@v7
-        with:
-          script: |
-            const pr = context.payload.pull_request;
-            const delay = (ms) => new Promise(resolve => setTimeout(resolve, ms));
-
-            while (true) {
-              const { data: checks } = await github.rest.checks.listForRef({
-                owner: context.repo.owner,
-                repo: context.repo.repo,
-                ref: pr.head.sha, // Ensure only the latest commit is considered
-              });
-
-              // Filter to keep only the latest status for each unique check name
-              const uniqueChecks = Object.values(
-                checks.check_runs.reduce((acc, check) => {
-                  if (check.head_sha === pr.head.sha) { // Only include checks for the latest commit
-                    acc[check.name] = check; // Overwrite with the latest occurrence
-                  }
-                  return acc;
-                }, {})
-              );
-
-              console.log('Filtered check statuses:', uniqueChecks.map(check => ({
-                name: check.name,
-                status: check.status,
-                conclusion: check.conclusion,
-              })));
-
-              // Exclude the current workflow's check
-              const filteredChecks = uniqueChecks.filter(check => check.name !== 'dependabot-automerge');
-
-              const inProgress = filteredChecks.some(check => check.status === 'in_progress' || check.status === 'queued');
-              const failed = filteredChecks.some(check => check.conclusion === 'failure');
-              const success = filteredChecks.every(check => check.conclusion === 'success');
-
-              if (failed) {
-                const failedChecks = filteredChecks
-                  .filter(check => check.conclusion === 'failure')
-                  .map(check => `${check.name}: ${check.conclusion}`);
-                console.error('The following checks have failed:', failedChecks.join(', '));
-                throw new Error('One or more checks have failed.');
-              }
-
-              if (success && !inProgress) {
-                console.log('All checks (excluding this workflow) have passed.');
-                break;
-              }
-
-              if (inProgress || filteredChecks.some(check => check.status === 'queued')) {
-                console.log('Checks are still running or queued. Waiting...');
-                await delay(10000);
-              } else {
-                console.log('Waiting for checks to re-run...');
-                await delay(10000);
-              }
-            }
-
-      - name: Auto-merge changes from Dependabot
-        id: auto-merge
-        if: steps.metadata.outputs.update-type != 'version-update:semver-major' || steps.metadata.outputs.package-ecosystem == 'github_actions'
-        run: gh pr merge --auto --squash "$PR_URL"
-        env:
-          PR_URL: ${{ github.event.pull_request.html_url }}
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-
-      - name: Run deploy workflow
-        if: steps.auto-merge.outcome == 'success'
-        env:
-          GH_TOKEN: ${{ github.token }}
-        run: |
-          gh api repos/${{ github.repository }}/dispatches \
-            -H "X-GitHub-Api-Version: 2022-11-28" \
-            -F "event_type=dependabot-deploy"
+    if: ${{ github.actor == 'dependabot[bot]' }}
+    uses: navikt/mob-gha-workflows/.github/workflows/dependabot-automerge.yaml@main
+    secrets: inherit

@@ -15,6 +15,7 @@ on:
       - ".github/workflows/security.yaml"
       - ".github/dependabot.yaml"
       - ".github/workflows/dependabot-automerge.yaml"
+
   repository_dispatch:
     types: [dependabot-deploy]
 
