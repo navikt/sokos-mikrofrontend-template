@@ -1,6 +1,6 @@
 # sokos-mikrofrontend-template
 
-Brukes som utgangspunkt for å opprette nye mikrofrontends i Økonomiportalen.
+Brukes som utgangspunkt for å opprette nye mikrofrontends i Utbetalingsportalen.
 
 NB! Navngi følgende: `sokos-up-appNavn`, f.eks: `sokos-up-venteregister`
 
@@ -77,8 +77,3 @@ function ErrorBoundary(): JSX.Element {
 ## Design
 
 Det finnes et utkast til en designguide kan man basere seg på: [Kjerneoppsett Utbetalingsportalen](https://navno-my.sharepoint.com/:o:/g/personal/julie_utgard_nav_no/EtV6P-sYimZNsACTYqZmSbsBLeSlsvc6PP2svso_H09dZA?e=KSY5SO)
-
-## Henvendelser
-
-Spørsmål knyttet til koden eller prosjektet kan stilles som issues her på Github.
-Interne henvendelser kan sendes via Slack i kanalen #po-utbetaling.
