@@ -23,7 +23,6 @@ spec:
   ingresses:
     - "https://utbetalingsportalen.intern.dev.nav.no/sokos-mikrofrontend-template"
     - "https://utbetalingsportalen.ansatt.dev.nav.no/sokos-mikrofrontend-template"
-    - "https://sokos-utbetalingsportalen-astro.intern.dev.nav.no/sokos-mikrofrontend-template"
   resources:
     limits:
       cpu: "3"
