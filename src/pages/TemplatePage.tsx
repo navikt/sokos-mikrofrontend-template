@@ -24,7 +24,7 @@ export default function TemplatePage() {
     <>
       <div className={styles["template-header"]}>
         <Heading spacing level="1" size="large">
-          Grensesnittmal for Utbetalingsportalen
+          React grensesnittmal for Utbetalingsportalen
         </Heading>
         <BodyLong>
           Dette er en mal for å bygge mikrofrontend i Utbetalingsportalen
