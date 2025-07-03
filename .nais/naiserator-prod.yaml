@@ -1,7 +1,7 @@
 apiVersion: "nais.io/v1alpha1"
 kind: "Application"
 metadata:
-  name: sokos-mikrofrontend-template
+  name: sokos-react-template
   namespace: okonomi
   labels:
     team: okonomi
@@ -12,20 +12,20 @@ spec:
   image: "{{ image }}"
   port: 8080
   liveness:
-    path: /sokos-mikrofrontend-template/internal/isAlive
+    path: /sokos-react-template/internal/isAlive
     initialDelay: 10
   readiness:
-    path: /sokos-mikrofrontend-template/internal/isReady
+    path: /sokos-react-template/internal/isReady
     initialDelay: 10
   prometheus:
     enabled: true
-    path: /sokos-mikrofrontend-template/internal/metrics
+    path: /sokos-react-template/internal/metrics
   replicas:
     min: 2
     max: 2
   ingresses:
-    - "https://utbetalingsportalen.intern.nav.no/sokos-mikrofrontend-template"
-    - "https://utbetalingsportalen.ansatt.nav.no/sokos-mikrofrontend-template"
+    - "https://utbetalingsportalen.intern.nav.no/sokos-react-template"
+    - "https://utbetalingsportalen.ansatt.nav.no/sokos-react-template"
   resources:
     limits:
       cpu: "3"

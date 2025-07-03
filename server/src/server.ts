@@ -3,7 +3,7 @@ import express, { Request, Response } from "express";
 import expressStaticGzip from "express-static-gzip";
 import path from "path";
 
-const basePath = "/sokos-mikrofrontend-template";
+const basePath = "/sokos-react-template";
 const buildPath = path.resolve(__dirname, "../dist");
 const server = express();
 

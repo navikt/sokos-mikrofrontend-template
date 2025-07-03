@@ -1,7 +1,7 @@
 {
-  "name": "sokos-mikrofrontend-template-server",
+  "name": "sokos-react-template-server",
   "version": "1.0.0",
-  "description": "Server for sokos-mikrofrontend-template",
+  "description": "Server for sokos-react-template",
   "main": "src/server.ts",
   "scripts": {
     "dev": "nodemon src/server.ts",

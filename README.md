@@ -1,4 +1,4 @@
-# sokos-mikrofrontend-template
+# sokos-react-template
 
 Brukes som utgangspunkt for å opprette nye mikrofrontends i Utbetalingsportalen.
 

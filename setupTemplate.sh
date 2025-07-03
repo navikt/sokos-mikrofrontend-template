@@ -1,8 +1,8 @@
 #!/bin/bash
 
-default="sokos-mikrofrontend-template"
+default="sokos-react-template"
 
-echo '**** Setup for sokos-mikrofrontend-template ****'
+echo '**** Setup for sokos-react-template ****'
 echo
 read -p 'Project name (sokos-up-xxxx): ' projectName
 echo

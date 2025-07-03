@@ -23,7 +23,7 @@ export function initGrafanaFaro() {
     isolate: true,
     url: getTelemetryCollectorURL(),
     app: {
-      name: "sokos-mikrofrontend-template",
+      name: "sokos-react-template",
     },
     instrumentations: [
       ...getWebInstrumentations({
